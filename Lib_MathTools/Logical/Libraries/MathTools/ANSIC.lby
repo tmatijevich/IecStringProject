@@ -5,6 +5,6 @@
     <File Description="Exported data types">Types.typ</File>
     <File Description="Exported constants">Constants.var</File>
     <File Description="Exported functions and function blocks">MathTools.fun</File>
-    <File>mathtools.c</File>
+    <File>math_tools.c</File>
   </Files>
 </Library>

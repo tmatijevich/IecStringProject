@@ -1,7 +1,7 @@
 #include "MathTools.h"
 
 /* Internal function */
-static signed long fnWrapInteger(signed long inputValue, signed long lowerBound, signed long upperBound) {
+static signed long WrapInteger(signed long inputValue, signed long lowerBound, signed long upperBound) {
 	/* Static functions are functions only visible to other functions in the file */
 	
 	if(lowerBound <= upperBound) {
@@ -26,33 +26,33 @@ static signed long fnWrapInteger(signed long inputValue, signed long lowerBound,
  */
 
 /* USINT wrap */
-unsigned char fnWrapUSINT(signed long Value, signed long LowerBound, signed long UpperBound) {
+unsigned char Math_WrapUSINT(signed long Value, signed long LowerBound, signed long UpperBound) {
 	if(LowerBound < 0 || LowerBound > 255 || UpperBound < 0 || UpperBound > 255)
 		return 0;
 	else
-		return (unsigned char)fnWrapInteger(Value, LowerBound, UpperBound);
+		return (unsigned char)WrapInteger(Value, LowerBound, UpperBound);
 }
 
 /* SINT wrap */
-signed char fnWrapSINT(signed long Value, signed long LowerBound, signed long UpperBound) {
+signed char Math_WrapSINT(signed long Value, signed long LowerBound, signed long UpperBound) {
 	if(LowerBound < -128 || LowerBound > 127 || UpperBound < -128 || UpperBound > 127)
 		return 0;
 	else
-		return (signed char)fnWrapInteger(Value, LowerBound, UpperBound);
+		return (signed char)WrapInteger(Value, LowerBound, UpperBound);
 }
 
 /* UINT wrap */
-unsigned short fnWrapUINT(signed long Value, signed long LowerBound, signed long UpperBound) {
+unsigned short Math_WrapUINT(signed long Value, signed long LowerBound, signed long UpperBound) {
 	if(LowerBound < 0 || LowerBound > 65535 || UpperBound < 0 || UpperBound > 65535)
 		return 0;
 	else
-		return (unsigned short)fnWrapInteger(Value, LowerBound, UpperBound);
+		return (unsigned short)WrapInteger(Value, LowerBound, UpperBound);
 }
 
 /* INT wrap */
-signed short fnWrapINT(signed long Value, signed long LowerBound, signed long UpperBound) {
+signed short Math_WrapINT(signed long Value, signed long LowerBound, signed long UpperBound) {
 	if(LowerBound < -32768 || LowerBound > 32767 || UpperBound < -32768 || UpperBound > 32767)
 		return 0;
 	else
-		return (signed short)fnWrapInteger(Value, LowerBound, UpperBound);
+		return (signed short)WrapInteger(Value, LowerBound, UpperBound);
 }
