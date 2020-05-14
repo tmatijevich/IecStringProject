@@ -1,0 +1,10 @@
+VAR
+	dt : REAL;
+	dx : REAL;
+	v0 : REAL;
+	vf : REAL;
+	vmin : REAL;
+	vmax : REAL;
+	AccSoln : KinGetAccSoln_typ;
+	AccValid : BOOL;
+END_VAR
