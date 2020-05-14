@@ -4,7 +4,9 @@
   <TaskClass Name="Cyclic#1" />
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
-  <TaskClass Name="Cyclic#4" />
+  <TaskClass Name="Cyclic#4">
+    <Task Name="Example" Source="Example.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+  </TaskClass>
   <Libraries>
     <LibraryObject Name="MathTools" Source="Libraries.MathTools.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </Libraries>

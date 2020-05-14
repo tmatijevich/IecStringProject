@@ -1,0 +1,14 @@
+VAR
+	In1 : USINT;
+	In2 : SINT;
+	In3 : UINT;
+	In4 : INT;
+	In5 : REAL;
+	In6 : LREAL;
+	Out1 : USINT;
+	Out2 : SINT;
+	Out3 : UINT;
+	Out4 : INT;
+	Out5 : REAL;
+	Out6 : LREAL;
+END_VAR
