@@ -5,4 +5,8 @@
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4" />
+  <Libraries>
+    <LibraryObject Name="MathTools" Source="Libraries.MathTools.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <LibraryObject Name="PathKin" Source="Libraries.PathKin.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
+  </Libraries>
 </SwConfiguration>
