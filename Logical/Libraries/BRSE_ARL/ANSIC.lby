@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.4.67 SP?>
+<Library Version="2.00.0" SubType="ANSIC" xmlns="http://br-automation.co.at/AS/Library">
+  <Files>
+    <File>BRSE_ARL.fun</File>
+    <File>BRSE_ARL.typ</File>
+    <File>brse_arl_alloc.c</File>
+    <File>brse_arl_cyclic.c</File>
+    <File>brse_arl_log.c</File>
+    <File>brse_arl_main.h</File>
+    <File>example.c</File>
+    <File>version_history.c</File>
+    <File>brse_arl_debuginfo.c</File>
+  </Files>
+  <Dependencies>
+    <Dependency ObjectName="AsBrStr" />
+    <Dependency ObjectName="SYS_Lib" />
+    <Dependency ObjectName="ArEventLog" />
+  </Dependencies>
+</Library>

@@ -14,6 +14,8 @@
 # Ignore all .set and .isopen files
 *.set
 *.isopen
+# Make exception for safety code
+!cpu.set
 
 # Ignore .zip files, for the moment
 *.zip
