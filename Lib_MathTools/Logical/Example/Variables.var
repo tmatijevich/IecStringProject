@@ -21,3 +21,8 @@ VAR
 	SolnRoots : Math2ndOrderRootsSoln_typ;
 	ValidRoots : BOOL;
 END_VAR
+(*Unit step (heaviside) function*)
+VAR
+	In7 : REAL;
+	Out7 : REAL;
+END_VAR

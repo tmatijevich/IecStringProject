@@ -1,3 +1,9 @@
+/*********************************************************************************
+ * Copyright: B&R Industrial Automation
+ * Author:    Tyler Matijevich
+ * Created:   May 14, 2020/1:34 PM 
+ *********************************************************************************/ 
+
 #include "MathTools.h"
 #include <math.h>
 
@@ -115,4 +121,9 @@ plcbit Math_2ndOrderRoots(double p2, double p1, double p0, struct Math2ndOrderRo
 		} else /* No solution */
 			return 0;
 	}
+}
+
+/* Heaviside function */
+float Math_UnitStep(double Input){
+	return (Input >= 0.0)? 1.0 : 0.0;
 }

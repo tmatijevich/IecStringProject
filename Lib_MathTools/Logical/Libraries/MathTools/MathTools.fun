@@ -48,7 +48,7 @@ FUNCTION Math_WrapLREAL : LREAL
 		UpperBound : LREAL;
 	END_VAR
 END_FUNCTION
-(*Quadtratic equation*)
+(*Quadtratic formula*)
 
 FUNCTION Math_2ndOrderRoots : BOOL
 	VAR_INPUT
@@ -58,5 +58,12 @@ FUNCTION Math_2ndOrderRoots : BOOL
 	END_VAR
 	VAR_IN_OUT
 		Solution : Math2ndOrderRootsSoln_typ;
+	END_VAR
+END_FUNCTION
+(*Heaviside function*)
+
+FUNCTION Math_UnitStep : REAL
+	VAR_INPUT
+		Input : LREAL;
 	END_VAR
 END_FUNCTION

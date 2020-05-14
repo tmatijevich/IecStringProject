@@ -18,6 +18,8 @@ PROGRAM _INIT
 	p2 := 2.0;
 	p1 := -1.0;
 	p0 := -6.0;
+	
+	In7 := -1.0;
 
 END_PROGRAM
 
@@ -31,6 +33,8 @@ PROGRAM _CYCLIC
 	Out6 := Math_WrapLREAL(In6, 0.0, 1000.0);
 	
 	ValidRoots := Math_2ndOrderRoots(p2, p1, p0, SolnRoots);
+	
+	Out7 := Math_UnitStep(In7);
 	
 END_PROGRAM
 
