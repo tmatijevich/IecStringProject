@@ -14,6 +14,10 @@ PROGRAM _INIT
 	In4 := -1400;
 	In5 := 734.0;
 	In6 := -12.0;
+	
+	p2 := 2.0;
+	p1 := -1.0;
+	p0 := -6.0;
 
 END_PROGRAM
 
@@ -25,6 +29,8 @@ PROGRAM _CYCLIC
 	Out4 := Math_WrapINT(In4, -1200, -1);
 	Out5 := Math_WrapREAL(In5, 0.0, 360.0);
 	Out6 := Math_WrapLREAL(In6, 0.0, 1000.0);
+	
+	ValidRoots := Math_2ndOrderRoots(p2, p1, p0, SolnRoots);
 	
 END_PROGRAM
 

@@ -48,3 +48,15 @@ FUNCTION Math_WrapLREAL : LREAL
 		UpperBound : LREAL;
 	END_VAR
 END_FUNCTION
+(*Quadtratic equation*)
+
+FUNCTION Math_2ndOrderRoots : BOOL
+	VAR_INPUT
+		p2 : LREAL;
+		p1 : LREAL;
+		p0 : LREAL;
+	END_VAR
+	VAR_IN_OUT
+		Solution : Math2ndOrderRootsSoln_typ;
+	END_VAR
+END_FUNCTION

@@ -1,3 +1,4 @@
+(*Wrap value onto range*)
 VAR
 	In1 : USINT;
 	In2 : SINT;
@@ -11,4 +12,12 @@ VAR
 	Out4 : INT;
 	Out5 : REAL;
 	Out6 : LREAL;
+END_VAR
+(*Quadratic formula*)
+VAR
+	p2 : REAL;
+	p1 : REAL;
+	p0 : REAL;
+	SolnRoots : Math2ndOrderRootsSoln_typ;
+	ValidRoots : BOOL;
 END_VAR
