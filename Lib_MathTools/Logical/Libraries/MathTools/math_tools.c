@@ -1,6 +1,10 @@
 #include "MathTools.h"
+#include <math.h>
 
-/* Internal function */
+/* 
+ * Internal function 
+ * Utilize the implicit conversion from chars/shorts to longs
+ */
 static signed long WrapInteger(signed long inputValue, signed long lowerBound, signed long upperBound) {
 	/* Static functions are functions only visible to other functions in the file */
 	
@@ -55,4 +59,29 @@ signed short Math_WrapINT(signed long Value, signed long LowerBound, signed long
 		return 0;
 	else
 		return (signed short)WrapInteger(Value, LowerBound, UpperBound);
+}
+
+
+/* 
+ * Internal function 
+ * Utilize the implicit conversion from floats to doubles
+ */
+double WrapDouble(double inputValue, double lowerBound, double upperBound) {
+	if(upperBound > lowerBound){
+		double distance = inputValue - lowerBound;
+		double total = upperBound - lowerBound;
+		double offset = distance - trunc(distance / total) * total;
+		return (distance >= 0.0)? (lowerBound + offset) : (upperBound + offset);
+	} else
+		return 0.0;
+}
+
+/* REAL wrap */
+float Math_WrapREAL(double Value, double LowerBound, double UpperBound) {
+	return (float)WrapDouble(Value, LowerBound, UpperBound);
+}
+
+/* LREAL wrap */
+double Math_WrapLREAL(double Value, double LowerBound, double UpperBound) {
+	return WrapDouble(Value, LowerBound, UpperBound);
 }
