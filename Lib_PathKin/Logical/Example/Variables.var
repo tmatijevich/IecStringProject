@@ -16,3 +16,8 @@ VAR
 	AccInTimespanPlusSoln : KinGetAccInTimespanSoln_typ;
 	AccInTimespanPlusValid : BOOL;
 END_VAR
+(*Kin_GetTimespan()*)
+VAR
+	TimespanSoln : KinGetTimespanSoln_typ;
+	TimespanValid : BOOL;
+END_VAR

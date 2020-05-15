@@ -23,6 +23,8 @@ PROGRAM _CYCLIC
 	
 	AccInTimespanPlusValid := Kin_GetAccInTimespanPlus(dt, dx, v0, vf, vmin, vmax, AccInTimespanPlusSoln);
 	
+	TimespanValid := Kin_GetTimespan(dx - EXPT(v0, 2) / (2.0 * AccInTimespanPlusSoln.a), v0, vf, vmin, vmax, AccInTimespanPlusSoln.a, TimespanSoln);
+	
 END_PROGRAM
 
 PROGRAM _EXIT
