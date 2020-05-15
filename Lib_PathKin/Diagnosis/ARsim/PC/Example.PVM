@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Example 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=38 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=13 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                       dt                                     REAL    0 "                                                             0.3"    0    8    1   10    1    0         
                                       dx                                     REAL    0 "                                                            0.35"    0    8    1   10    1    0         
@@ -14,12 +14,10 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 I
                                       t1                                     REAL    0 "                                                     0.188524559"    1    8    1   10    0    0         
                                       t2                                     REAL    0 "                                                     0.226229519"    1    8    1   10    0    0         
                                       cs                                    USINT    0 "                                                               2"    1    5    1   10    0    0         
-                                sMessage                              STRING[125]    0 "                                                              ''"    1    9  126    1    0    0         
                   AccInTimespanPlusValid                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
                    AccInTimespanPlusSoln              KinGetAccInTimespanSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
                                        a                                     REAL    0 "                                                        71.26669"    1    8    1   10    0    0         
                                       cs                                    USINT    0 "                                                              22"    1    5    1   10    0    0         
-                                sMessage                              STRING[125]    0 "                                                              ''"    1    9  126    1    0    0         
                            TimespanValid                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
                             TimespanSoln                   KinGetTimespanSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
                                    tspan                                     REAL    0 "                                                             0.3"    1    8    1   10    0    0         
@@ -32,10 +30,9 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 I
                                    tVmin                                     REAL    0 "                                                     0.418631136"    1    8    1   10    0    0         
                                    v1min                                     REAL    0 "                                                            0.75"    1    8    1   10    0    0         
                                       cs                                    USINT    0 "                                                              22"    1    5    1   10    0    0         
-                                sMessage                              STRING[125]    0 "                                                              ''"    1    9  126    1    0    0         
                        VelProfPointValid                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
                         VelProfPointSoln               KinGetVelProfPointSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
-                                       x                                     REAL    0 "                                                  7.29211058E-37"    1    8    1   10    0    0         
-                                       v                                     REAL    0 "                                                  2.83188761E-36"    1    8    1   10    0    0         
-                                       a                                     REAL    0 "                                                    5.498811E-36"    1    8    1   10    0    0         
-                                 segment                                    USINT    0 "                                                              96"    1    5    1   10    0    0         
+                                       x                                     REAL    0 "                                                      0.52300626"    1    8    1   10    0    0         
+                                       v                                     REAL    0 "                                                     0.817499936"    1    8    1   10    0    0         
+                                       a                                     REAL    0 "                                                      4.49999952"    1    8    1   10    0    0         
+                                 segment                                    USINT    0 "                                                               4"    1    5    1   10    0    0         
