@@ -5,6 +5,14 @@ VAR
 	vf : REAL;
 	vmin : REAL;
 	vmax : REAL;
+END_VAR
+(*Kin_GetAcc()*)
+VAR
 	AccSoln : KinGetAccSoln_typ;
 	AccValid : BOOL;
+END_VAR
+(*Kin_GetAccInTimespanPlus()*)
+VAR
+	AccInTimespanPlusSoln : KinGetAccInTimespanSoln_typ;
+	AccInTimespanPlusValid : BOOL;
 END_VAR
