@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Example 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=13 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=35 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                       dt                                     REAL    0 "                                                             0.3"    0    8    1   10    1    0         
                                       dx                                     REAL    0 "                                                            0.35"    0    8    1   10    1    0         
@@ -30,7 +30,24 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 I
                                    tVmin                                     REAL    0 "                                                     0.418631136"    1    8    1   10    0    0         
                                    v1min                                     REAL    0 "                                                            0.75"    1    8    1   10    0    0         
                                       cs                                    USINT    0 "                                                              22"    1    5    1   10    0    0         
-                       VelProfPointValid                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
+                                   times                              REAL[0..15]    0 "                                                               *"    0    8   16    0    1    1         
+                                times[0]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                                times[1]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                                times[2]                                     REAL    0 "                                                            0.25"    1    8    1   10    1    0         
+                                times[3]                                     REAL    0 "                                                             0.4"    1    8    1   10    1    0         
+                                times[4]                                     REAL    0 "                                                             0.5"    1    8    1   10    1    0         
+                                times[5]                                     REAL    0 "                                                             0.6"    1    8    1   10    1    0         
+                                times[6]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                                times[7]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                                times[8]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                                times[9]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                               times[10]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                               times[11]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                               times[12]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                               times[13]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                               times[14]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                               times[15]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
+                      VelProfPointResult                                    USINT    0 "                                                               0"    0    5    1   10    1    0         
                         VelProfPointSoln               KinGetVelProfPointSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
                                        x                                     REAL    0 "                                                      0.52300626"    1    8    1   10    0    0         
                                        v                                     REAL    0 "                                                     0.817499936"    1    8    1   10    0    0         

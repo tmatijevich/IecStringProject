@@ -26,5 +26,5 @@ VAR
 	times : ARRAY[0..KIN_MAX_PROF_POINTS] OF REAL;
 	velocities : ARRAY[0..KIN_MAX_PROF_POINTS] OF REAL;
 	VelProfPointSoln : KinGetVelProfPointSoln_typ;
-	VelProfPointValid : BOOL;
+	VelProfPointResult : USINT;
 END_VAR
