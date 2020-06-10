@@ -32,7 +32,7 @@ PROGRAM _CYCLIC
 	Out5 := Math_WrapREAL(In5, 0.0, 360.0);
 	Out6 := Math_WrapLREAL(In6, 0.0, 1000.0);
 	
-	ValidRoots := Math_2ndOrderRoots(p2, p1, p0, SolnRoots);
+	statusRoots := Math_2ndOrderRoots(p2, p1, p0, SolnRoots);
 	
 	Out7 := Math_UnitStep(In7);
 	

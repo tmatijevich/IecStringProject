@@ -19,7 +19,7 @@ VAR
 	p1 : REAL;
 	p0 : REAL;
 	SolnRoots : Math2ndOrderRootsSoln_typ;
-	ValidRoots : BOOL;
+	statusRoots : USINT;
 END_VAR
 (*Unit step (heaviside) function*)
 VAR

@@ -50,7 +50,7 @@ FUNCTION Math_WrapLREAL : LREAL
 END_FUNCTION
 (*Quadtratic formula*)
 
-FUNCTION Math_2ndOrderRoots : BOOL
+FUNCTION Math_2ndOrderRoots : USINT
 	VAR_INPUT
 		p2 : LREAL;
 		p1 : LREAL;
