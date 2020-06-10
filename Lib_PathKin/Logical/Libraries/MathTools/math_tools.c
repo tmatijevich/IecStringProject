@@ -93,7 +93,7 @@ double Math_WrapLREAL(double Value, double LowerBound, double UpperBound) {
 }
 
 /* 2nd Order Roots (Quadratic formula) $$ p2 * x^2 + p1 * x + p0 = 0 $$ */
-plcbit Math_2ndOrderRoots(double p2, double p1, double p0, struct Math2ndOrderRootsSoln_typ* Solution) {
+unsigned char Math_2ndOrderRoots(double p2, double p1, double p0, struct Math2ndOrderRootsSoln_typ* Solution) {
 	Solution->r1 = Solution->r2 = 0.0; /* Default/Invalid solution */
 	double determinant = pow(p1, 2.0) - 4.0 * p2 * p0;
 	
@@ -104,22 +104,22 @@ plcbit Math_2ndOrderRoots(double p2, double p1, double p0, struct Math2ndOrderRo
 		} 
 		
 		else if(determinant < 0.0) 
-			return 0; /* Imaginary roots, do not consider this case */
+			return 11; /* Status Code 11: Imaginary roots, do not consider this case */
 		
 		else {
 			Solution->r1 = (-p1) / (2.0 * p2);
 			Solution->r2 = Solution->r1;
 		}
-		return 1;
+		return 0;
 		
 	} else { 
 		if(fabs(p1) > 0.0) { /* One root - protect against divide by zero */
 			Solution->r1 = (-p0) / p1;
 			Solution->r2 = Solution->r1;
-			return 1;
+			return 0;
 		
 		} else /* No solution */
-			return 0;
+			return 12; /* Status Code 12: No solution */
 	}
 }
 
