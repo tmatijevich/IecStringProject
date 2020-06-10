@@ -14,7 +14,7 @@ END_VAR
 (*Kin_GetAccInTimespanPlus()*)
 VAR
 	AccInTimespanPlusSoln : KinGetAccInTimespanSoln_typ;
-	AccInTimespanPlusValid : BOOL;
+	status_GetAccInTimespanPlus : USINT;
 END_VAR
 (*Kin_GetTimespan()*)
 VAR

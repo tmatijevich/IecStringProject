@@ -33,7 +33,7 @@ PROGRAM _CYCLIC
 	
 	status_GetAcc := Kin_GetAcc(dt, dx, v0, vf, vmin, vmax, AccSoln);
 	
-	AccInTimespanPlusValid := Kin_GetAccInTimespanPlus(dt, dx, v0, vf, vmin, vmax, AccInTimespanPlusSoln);
+	status_GetAccInTimespanPlus := Kin_GetAccInTimespanPlus(dt, dx, v0, vf, vmin, vmax, AccInTimespanPlusSoln);
 	
 	TimespanValid := Kin_GetTimespan(dx - EXPT(v0, 2) / (2.0 * AccInTimespanPlusSoln.a), v0, vf, vmin, vmax, AccInTimespanPlusSoln.a, TimespanSoln);
 	
