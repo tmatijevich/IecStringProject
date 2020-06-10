@@ -35,9 +35,9 @@ PROGRAM _CYCLIC
 	
 	status_GetAccInTimespanPlus := Kin_GetAccInTimespanPlus(dt, dx, v0, vf, vmin, vmax, AccInTimespanPlusSoln);
 	
-	TimespanValid := Kin_GetTimespan(dx - EXPT(v0, 2) / (2.0 * AccInTimespanPlusSoln.a), v0, vf, vmin, vmax, AccInTimespanPlusSoln.a, TimespanSoln);
+	status_GetTimespan := Kin_GetTimespan(dx - EXPT(v0, 2) / (2.0 * AccInTimespanPlusSoln.a), v0, vf, vmin, vmax, AccInTimespanPlusSoln.a, TimespanSoln);
 	
-	VelProfPointResult := Kin_GetVelProfPoint(0.0, times, velocities, 5, 0.515, VelProfPointSoln);
+	status_GetVelProfPoint := Kin_GetVelProfPoint(0.0, times, velocities, 5, 0.515, VelProfPointSoln);
 	
 END_PROGRAM
 

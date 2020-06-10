@@ -19,12 +19,12 @@ END_VAR
 (*Kin_GetTimespan()*)
 VAR
 	TimespanSoln : KinGetTimespanSoln_typ;
-	TimespanValid : BOOL;
+	status_GetTimespan : USINT;
 END_VAR
 (*Kin_GetVelProfPoint()*)
 VAR
 	times : ARRAY[0..KIN_MAX_PROF_POINTS] OF REAL;
 	velocities : ARRAY[0..KIN_MAX_PROF_POINTS] OF REAL;
 	VelProfPointSoln : KinGetVelProfPointSoln_typ;
-	VelProfPointResult : USINT;
+	status_GetVelProfPoint : USINT;
 END_VAR

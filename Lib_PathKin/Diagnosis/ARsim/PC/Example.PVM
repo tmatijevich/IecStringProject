@@ -1,7 +1,7 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Example 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=14 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=35 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                      dt                                     REAL    0 "                                                             0.3"    0    8    1   10    1    0         
+                                      dt                                     REAL    0 "                                                             0.2"    0    8    1   10    1    0         
                                       dx                                     REAL    0 "                                                            0.35"    0    8    1   10    1    0         
                                       v0                                     REAL    0 "                                                             1.9"    0    8    1   10    1    0         
                                       vf                                     REAL    0 "                                                             1.2"    0    8    1   10    1    0         
@@ -9,25 +9,25 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 I
                                     vmin                                     REAL    0 "                                                            0.75"    0    8    1   10    1    0         
                            status_GetAcc                                    USINT    0 "                                                               0"    0    5    1   10    1    0         
                                  AccSoln                        KinGetAccSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
-                                       a                                     REAL    0 "                                                        6.100001"    1    8    1   10    0    0         
-                                     v12                                     REAL    0 "                                                            0.75"    1    8    1   10    0    0         
-                                      t1                                     REAL    0 "                                                     0.188524559"    1    8    1   10    0    0         
-                                      t2                                     REAL    0 "                                                     0.226229519"    1    8    1   10    0    0         
-                                      cs                                    USINT    0 "                                                               2"    1    5    1   10    0    0         
+                                       a                                     REAL    0 "                                                       6.0311265"    1    8    1   10    0    0         
+                                     v12                                     REAL    0 "                                                      2.15311265"    1    8    1   10    0    0         
+                                      t1                                     REAL    0 "                                                    0.0419677272"    1    8    1   10    0    0         
+                                      t2                                     REAL    0 "                                                    0.0419677272"    1    8    1   10    0    0         
+                                      cs                                    USINT    0 "                                                              10"    1    5    1   10    0    0         
              status_GetAccInTimespanPlus                                    USINT    0 "                                                               0"    0    5    1   10    1    0         
                    AccInTimespanPlusSoln              KinGetAccInTimespanSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
-                                       a                                     REAL    0 "                                                        71.26669"    1    8    1   10    0    0         
+                                       a                                     REAL    0 "                                                      23.7555561"    1    8    1   10    0    0         
                                       cs                                    USINT    0 "                                                              22"    1    5    1   10    0    0         
-                           TimespanValid                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
+                      status_GetTimespan                                    USINT    0 "                                                               0"    0    5    1   10    1    0         
                             TimespanSoln                   KinGetTimespanSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
-                                   tspan                                     REAL    0 "                                                             0.3"    1    8    1   10    0    0         
-                                  tVmax1                                     REAL    0 "                                                      0.01543498"    1    8    1   10    0    0         
-                                  tVmax2                                     REAL    0 "                                                      0.09337388"    1    8    1   10    0    0         
-                                   tVmax                                     REAL    0 "                                                     0.118631117"    1    8    1   10    0    0         
+                                   tspan                                     REAL    0 "                                                     0.200000018"    1    8    1   10    0    0         
+                                  tVmax1                                     REAL    0 "                                                    0.0463049561"    1    8    1   10    0    0         
+                                  tVmax2                                     REAL    0 "                                                      0.04678828"    1    8    1   10    0    0         
+                                   tVmax                                     REAL    0 "                                                     0.122560024"    1    8    1   10    0    0         
                                    v1max                                     REAL    0 "                                                             3.0"    1    8    1   10    0    0         
-                                  tVmin1                                     REAL    0 "                                                      0.01613657"    1    8    1   10    0    0         
-                                  tVmin2                                     REAL    0 "                                                     0.412316829"    1    8    1   10    0    0         
-                                   tVmin                                     REAL    0 "                                                     0.418631136"    1    8    1   10    0    0         
+                                  tVmin1                                     REAL    0 "                                                    0.0484097265"    1    8    1   10    0    0         
+                                  tVmin2                                     REAL    0 "                                                       0.3036171"    1    8    1   10    0    0         
+                                   tVmin                                     REAL    0 "                                                     0.322560042"    1    8    1   10    0    0         
                                    v1min                                     REAL    0 "                                                            0.75"    1    8    1   10    0    0         
                                       cs                                    USINT    0 "                                                              22"    1    5    1   10    0    0         
                                    times                              REAL[0..15]    0 "                                                               *"    0    8   16    0    1    1         
@@ -47,7 +47,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 I
                                times[13]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
                                times[14]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
                                times[15]                                     REAL    0 "                                                             0.0"    1    8    1   10    1    0         
-                      VelProfPointResult                                    USINT    0 "                                                               0"    0    5    1   10    1    0         
+                  status_GetVelProfPoint                                    USINT    0 "                                                               0"    0    5    1   10    1    0         
                         VelProfPointSoln               KinGetVelProfPointSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
                                        x                                     REAL    0 "                                                      0.52300626"    1    8    1   10    0    0         
                                        v                                     REAL    0 "                                                     0.817499936"    1    8    1   10    0    0         
