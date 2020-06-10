@@ -31,7 +31,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC
 	
-	AccValid := Kin_GetAcc(dt, dx, v0, vf, vmin, vmax, AccSoln);
+	status_GetAcc := Kin_GetAcc(dt, dx, v0, vf, vmin, vmax, AccSoln);
 	
 	AccInTimespanPlusValid := Kin_GetAccInTimespanPlus(dt, dx, v0, vf, vmin, vmax, AccInTimespanPlusSoln);
 	

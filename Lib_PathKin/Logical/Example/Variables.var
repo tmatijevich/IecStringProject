@@ -9,7 +9,7 @@ END_VAR
 (*Kin_GetAcc()*)
 VAR
 	AccSoln : KinGetAccSoln_typ;
-	AccValid : BOOL;
+	status_GetAcc : USINT;
 END_VAR
 (*Kin_GetAccInTimespanPlus()*)
 VAR

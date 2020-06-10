@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Example 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=35 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=0 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                       dt                                     REAL    0 "                                                             0.3"    0    8    1   10    1    0         
                                       dx                                     REAL    0 "                                                            0.35"    0    8    1   10    1    0         
@@ -7,7 +7,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 I
                                       vf                                     REAL    0 "                                                             1.2"    0    8    1   10    1    0         
                                     vmax                                     REAL    0 "                                                             3.0"    0    8    1   10    1    0         
                                     vmin                                     REAL    0 "                                                            0.75"    0    8    1   10    1    0         
-                                AccValid                                     BOOL    0 "                                                            TRUE"    0    1    1    2    1    0         
+                           status_GetAcc                                    USINT    0 "                                                               0"    0    5    1   10    1    0         
                                  AccSoln                        KinGetAccSoln_typ    0 "                                                               *"    0   24    1    0    1    1         
                                        a                                     REAL    0 "                                                        6.100001"    1    8    1   10    0    0         
                                      v12                                     REAL    0 "                                                            0.75"    1    8    1   10    0    0         
