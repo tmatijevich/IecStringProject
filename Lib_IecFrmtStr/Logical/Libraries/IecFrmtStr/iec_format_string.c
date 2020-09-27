@@ -3,7 +3,7 @@
 
 /* Function declaration */
 //void fnFormatString(char* dst, char* src, FormatStringArguments_typ* pArgs) { - does not match the declaration datatypes
-unsigned long fnIecFormatString(unsigned long pDestination, unsigned long destinationLength, unsigned long pSource, unsigned long pArguments) {
+unsigned long IecFormatString(unsigned long pDestination, unsigned long destinationLength, unsigned long pSource, unsigned long pArguments) {
 	/*
 		This function has been extracted from the BRSE_ARL library where it exists solely 
 		as an internal function. Minimal changes have been made to ensure stability. This 
@@ -16,7 +16,7 @@ unsigned long fnIecFormatString(unsigned long pDestination, unsigned long destin
 	/* Create the necessary pointers, and convert from UDINTs */
 	char *dst; dst = (char*)pDestination;
 	char *src; src = (char*)pSource;
-	FormatStringArguments_typ *args; args = (FormatStringArguments_typ*)pArguments;
+	FormatStringArgumentsType *args; args = (FormatStringArgumentsType*)pArguments;
 	
 	/* Temporary strings */
 	char sFloat[13]; // sign, 6 significant digits (or 0.0001...), one decimal, scientific notation e.g. 'e+010'
@@ -39,7 +39,7 @@ unsigned long fnIecFormatString(unsigned long pDestination, unsigned long destin
 			
 			switch(*(++src)) {
 				case 'r':
-					if(countFloats <= MAX_INDEX_FORMAT_STR_ARGS) {
+					if(countFloats <= FORMAT_STR_MAX_INDEX_ARGS) {
 						i += brsftoa(args->r[countFloats++], (unsigned long)sFloat);
 						if(i < destinationLength) {
 							brsstrcat((unsigned long)dst, (unsigned long)sFloat);
@@ -52,7 +52,7 @@ unsigned long fnIecFormatString(unsigned long pDestination, unsigned long destin
 					break;
 					
 				case 'i':
-					if(countInts <= MAX_INDEX_FORMAT_STR_ARGS) {
+					if(countInts <= FORMAT_STR_MAX_INDEX_ARGS) {
 						i += brsitoa((signed long)(args->i[countInts++]), (unsigned long)sInt);
 						if(i < destinationLength) {
 							brsstrcat((unsigned long)dst, (unsigned long)sInt);
@@ -65,7 +65,7 @@ unsigned long fnIecFormatString(unsigned long pDestination, unsigned long destin
 					break;
 					
 				case 's':
-					if(countStrings <= MAX_INDEX_FORMAT_STR_ARGS) {
+					if(countStrings <= FORMAT_STR_MAX_INDEX_ARGS) {
 						// Increment by the length of the string argument
 						i += brsstrlen((unsigned long)(args->s[countStrings])); 
 						
