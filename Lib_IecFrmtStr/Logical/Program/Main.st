@@ -15,6 +15,15 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
+
+	IF CmdLog THEN
+		CmdLog := FALSE;
+		
+		// Construct and log message
+		IecFormatString(ADR(sFormattedMessage), STR_LEN_ALARM_MSG, ADR(sConstructMessage), ADR(MessageArguments));
+		EventID := ArEventLogMakeEventID(Severity := arEVENTLOG_SEVERITY_ERROR, Facility := 0, ErrorCode := ErrorCode);
+		BRSE_ARL_Log(1, EventID, 'MyLog', sFormattedMessage);
+	END_IF
 	
 	// Flush pending entries to the logbook
 	CyclicReturnStatus := BRSE_ARL_Cyclic(ID := 1);

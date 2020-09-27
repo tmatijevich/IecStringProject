@@ -6,3 +6,11 @@ END_VAR
 VAR CONSTANT
 	STR_LEN_ALARM_MSG : USINT := 125;
 END_VAR
+VAR
+	sConstructMessage : STRING[STR_LEN_ALARM_MSG];
+	sFormattedMessage : STRING[STR_LEN_ALARM_MSG];
+	MessageArguments : FormatStringArgumentsType;
+	CmdLog : BOOL;
+	EventID : DINT;
+	ErrorCode : UINT;
+END_VAR
