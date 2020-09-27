@@ -32,5 +32,6 @@
     <LibraryObject Name="runtime" Source="Libraries.runtime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="astime" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="IecFrmtStr" Source="Libraries.IecFrmtStr.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </Libraries>
 </SwConfiguration>
