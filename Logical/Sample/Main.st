@@ -13,6 +13,7 @@ PROGRAM _INIT
 	VarDint 	:= 45678; // A value bigger than an INT
 	VarReal 	:= 3.141592653589; // 32 bit floating value with more than enough significant digits
 	
+	MessageArguments.b[0] := TRUE;
 	MessageArguments.r[0] := 78.768;
 	MessageArguments.i[0] := -2144327918; // Example: ArEventLog error ID
 	MessageArguments.s[0] := 'INIT';
@@ -25,7 +26,7 @@ PROGRAM _CYCLIC
 	ReturnDint := brsitoa(VarDint, ADR(sDint));
 	ReturnReal := brsftoa(VarReal, ADR(sReal));
 
-	sConstructMessage := 'Temp is %r deg F, Error code %i, State %s';
+	sConstructMessage := 'Sequence completed is %b, Temp is %r deg F, Error code %i, State %s';
 	IecFormatString(ADR(sFormattedMessage), SIZEOF(sFormattedMessage), ADR(sConstructMessage), ADR(MessageArguments));
 	
 END_PROGRAM
