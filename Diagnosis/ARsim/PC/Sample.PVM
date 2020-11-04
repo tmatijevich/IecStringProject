@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Sample 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=32 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 Index=6 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                  VarDint                                     DINT    0 "                                                           45678"    0    4    1   10    1    0         
                                    sDint                               STRING[80]    0 "                                                         '45678'"    0    9   81    1    1    0         
@@ -7,7 +7,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 I
                                  VarReal                                     REAL    0 "                                                      3.14159274"    0    8    1   10    1    0         
                                    sReal                               STRING[80]    0 "                                                       '3.14159'"    0    9   81    1    1    0         
                               ReturnReal                                     UINT    0 "                                                               7"    0    6    1   10    1    0         
-                       sConstructMessage                              STRING[125]    0 "'Sequence completed is %b, Temp is %r deg F, Error code %i, State %s'"    0    9  126    1    1    0         
+                       sConstructMessage                               STRING[80]    0 "                       'Status %b, Temp %r F, Code %i, State %s'"    0    9   81    1    1    0         
                         MessageArguments                FormatStringArgumentsType    0 "                                                               *"    0   24    1    0    1    1         
                                        b                               BOOL[0..4]    0 "                                                               *"    1    1    5    0    0    1         
                                     b[0]                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
@@ -33,4 +33,5 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 I
                                     s[2]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[3]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[4]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
-                       sFormattedMessage                              STRING[125]    0 "'Sequence completed is TRUE, Temp is 78.768 deg F, Error code -2144327918, State INIT"    0    9  126    1    1    0         
+                       sFormattedMessage                               STRING[80]    0 "      'Status TRUE, Temp 78.768 F, Code -2144327918, State INIT'"    0    9   81    1    1    0         
+                                  StrLen                                    UDINT    0 "                                                              56"    0    7    1   10    1    0         

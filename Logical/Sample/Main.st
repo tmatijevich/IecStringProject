@@ -18,6 +18,8 @@ PROGRAM _INIT
 	MessageArguments.i[0] := -2144327918; // Example: ArEventLog error ID
 	MessageArguments.s[0] := 'INIT';
 	
+	sConstructMessage := 'Status %b, Temp %r F, Code %i, State %s';
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -26,8 +28,9 @@ PROGRAM _CYCLIC
 	ReturnDint := brsitoa(VarDint, ADR(sDint));
 	ReturnReal := brsftoa(VarReal, ADR(sReal));
 
-	sConstructMessage := 'Sequence completed is %b, Temp is %r deg F, Error code %i, State %s';
+	// The watch window will only print out 85 characters
 	IecFormatString(ADR(sFormattedMessage), SIZEOF(sFormattedMessage), ADR(sConstructMessage), ADR(MessageArguments));
+	StrLen := brsstrlen(ADR(sFormattedMessage));
 	
 END_PROGRAM
 
