@@ -1,16 +1,14 @@
 VAR
-	AllocationReturnStatus : UDINT;
-	CyclicReturnStatus : UDINT;
-	FreeReturnStatus : UDINT;
-END_VAR
-VAR CONSTANT
-	STR_LEN_ALARM_MSG : USINT := 125;
-END_VAR
-VAR
-	sConstructMessage : STRING[STR_LEN_ALARM_MSG];
-	sFormattedMessage : STRING[STR_LEN_ALARM_MSG];
+	sConstructMessage : STRING[125];
 	MessageArguments : FormatStringArgumentsType;
-	CmdLog : BOOL;
-	EventID : DINT;
-	ErrorCode : UINT;
+	sFormattedMessage : STRING[125];
+END_VAR
+(*AsBrStr test variables*)
+VAR
+	VarDint : DINT;
+	sDint : STRING[FORMAT_STR_STR_LEN_ARGS];
+	ReturnDint : UINT;
+	VarReal : REAL;
+	sReal : STRING[FORMAT_STR_STR_LEN_ARGS];
+	ReturnReal : UINT;
 END_VAR

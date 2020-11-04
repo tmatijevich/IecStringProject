@@ -9,30 +9,27 @@
 
 PROGRAM _INIT
 	
-	// Allocates the FIFO buffer for the logger
-	AllocationReturnStatus := BRSE_ARL_Alloc(ID := 1, Name := 'AppLog', LogbookSize := 10000, MessageSize := STR_LEN_ALARM_MSG, BufferedEntries := 25);
-
+	// Initialize REAL and DINT variables
+	VarDint 	:= 45678; // A value bigger than an INT
+	VarReal 	:= 3.141592653589; // 32 bit floating value with more than enough significant digits
+	
+	MessageArguments.r[0] := 78.768;
+	MessageArguments.i[0] := -2144327918; // Example: ArEventLog error ID
+	MessageArguments.s[0] := 'INIT';
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
 
-	IF CmdLog THEN
-		CmdLog := FALSE;
-		
-		// Construct and log message
-		IecFormatString(ADR(sFormattedMessage), STR_LEN_ALARM_MSG, ADR(sConstructMessage), ADR(MessageArguments));
-		EventID := ArEventLogMakeEventID(Severity := arEVENTLOG_SEVERITY_ERROR, Facility := 0, ErrorCode := ErrorCode);
-		BRSE_ARL_Log(1, EventID, 'MyLog', sFormattedMessage);
-	END_IF
-	
-	// Flush pending entries to the logbook
-	CyclicReturnStatus := BRSE_ARL_Cyclic(ID := 1);
+	// Test DINT and REAL to STRING conversions
+	ReturnDint := brsitoa(VarDint, ADR(sDint));
+	ReturnReal := brsftoa(VarReal, ADR(sReal));
+
+	sConstructMessage := 'Temp is %r deg F, Error code %i, State %s';
+	IecFormatString(ADR(sFormattedMessage), SIZEOF(sFormattedMessage), ADR(sConstructMessage), ADR(MessageArguments));
 	
 END_PROGRAM
 
 PROGRAM _EXIT
-	
-	// Deallocate the FIFO buffer
-	FreeReturnStatus := BRSE_ARL_Free(ID := 1);
 
 END_PROGRAM
