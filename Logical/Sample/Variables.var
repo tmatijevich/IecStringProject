@@ -1,7 +1,8 @@
 VAR
-	sConstructMessage : STRING[125];
+	sConstructMessage : STRING[80];
 	MessageArguments : FormatStringArgumentsType;
-	sFormattedMessage : STRING[125];
+	sFormattedMessage : STRING[80];
+	StrLen : UDINT;
 END_VAR
 (*AsBrStr test variables*)
 VAR
