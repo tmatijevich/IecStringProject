@@ -7,10 +7,10 @@ END_VAR
 (*AsBrStr test variables*)
 VAR
 	VarDint : DINT;
-	sDint : STRING[FORMAT_STR_STR_LEN_ARGS];
+	sDint : STRING[FORMAT_STR_ARGS_LEN];
 	ReturnDint : UINT;
 	VarReal : REAL;
-	sReal : STRING[FORMAT_STR_STR_LEN_ARGS];
+	sReal : STRING[FORMAT_STR_ARGS_LEN];
 	ReturnReal : UINT;
 	TestIecCheck : BOOL;
 	TestIndex : USINT;
