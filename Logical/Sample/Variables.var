@@ -12,4 +12,6 @@ VAR
 	VarReal : REAL;
 	sReal : STRING[FORMAT_STR_STR_LEN_ARGS];
 	ReturnReal : UINT;
+	TestIecCheck : BOOL;
+	TestIndex : USINT;
 END_VAR

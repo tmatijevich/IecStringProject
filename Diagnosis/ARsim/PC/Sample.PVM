@@ -1,11 +1,11 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Sample 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 Index=6 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 Index=34 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
                                  VarDint                                     DINT    0 "                                                           45678"    0    4    1   10    1    0         
                                    sDint                               STRING[80]    0 "                                                         '45678'"    0    9   81    1    1    0         
                               ReturnDint                                     UINT    0 "                                                               5"    0    6    1   10    1    0         
                                  VarReal                                     REAL    0 "                                                      3.14159274"    0    8    1   10    1    0         
-                                   sReal                               STRING[80]    0 "                                                       '3.14159'"    0    9   81    1    1    0         
+                                   sReal                               STRING[80]    0 "                                                       '3.14159'"    0    9   81    1    1    0        U
                               ReturnReal                                     UINT    0 "                                                               7"    0    6    1   10    1    0         
                        sConstructMessage                               STRING[80]    0 "                       'Status %b, Temp %r F, Code %i, State %s'"    0    9   81    1    1    0         
                         MessageArguments                FormatStringArgumentsType    0 "                                                               *"    0   24    1    0    1    1         
@@ -28,10 +28,11 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 I
                                     i[3]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
                                     i[4]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
                                        s                         STRING[80][0..4]    0 "                                                               *"    1    9   81    0    0    1         
-                                    s[0]                               STRING[80]    0 "                                                          'INIT'"    2    9   81    1    0    0         
+                                    s[0]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[1]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[2]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[3]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[4]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
-                       sFormattedMessage                               STRING[80]    0 "      'Status TRUE, Temp 78.768 F, Code -2144327918, State INIT'"    0    9   81    1    1    0         
-                                  StrLen                                    UDINT    0 "                                                              56"    0    7    1   10    1    0         
+                       sFormattedMessage                               STRING[80]    0 "          'Status TRUE, Temp 78.768 F, Code -2144327918, State '"    0    9   81    1    1    0         
+                                  StrLen                                    UDINT    0 "                                                              52"    0    7    1   10    1    0         
+                            TestIecCheck                                     BOOL    0 "                                                           FALSE"    0    1    1    2    1    0         
