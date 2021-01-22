@@ -28,6 +28,12 @@ PROGRAM _CYCLIC
 	// Test DINT and REAL to STRING conversions
 	ReturnDint := brsitoa(VarDint, ADR(sDint));
 	ReturnReal := brsftoa(VarReal, ADR(sReal));
+	
+	IF TestIecCheck THEN
+		TestIecCheck := FALSE;
+		TestIndex := 5;
+		MessageArguments.i[TestIndex] := 256;
+	END_IF
 
 	// The watch window will only print out 85 characters
 	IecFormatString(ADR(sFormattedMessage), SIZEOF(sFormattedMessage), ADR(sConstructMessage), ADR(MessageArguments));
