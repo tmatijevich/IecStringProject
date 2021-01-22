@@ -36,7 +36,10 @@ PROGRAM _CYCLIC
 	END_IF
 
 	// The watch window will only print out 85 characters
-	IecFormatString(ADR(sFormattedMessage), SIZEOF(sFormattedMessage), ADR(sConstructMessage), ADR(MessageArguments));
+	IecFormatString(pDestination := ADR(sFormattedMessage), 
+					DestinationLength := SIZEOF(sFormattedMessage), 
+					pSource := ADR(sConstructMessage), 
+					pArguments := ADR(MessageArguments));
 	StrLen := brsstrlen(ADR(sFormattedMessage));
 	
 END_PROGRAM
