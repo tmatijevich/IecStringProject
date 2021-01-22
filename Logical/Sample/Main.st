@@ -10,13 +10,14 @@
 PROGRAM _INIT
 	
 	// Initialize REAL and DINT variables
-	VarDint 	:= 45678; // A value bigger than an INT
-	VarReal 	:= 3.141592653589; // 32 bit floating value with more than enough significant digits
+	VarDint 	:= 45678; // Try -2147483648
+	VarReal 	:= 3.141592653589; // 32 bit floating value with more than enough significant digits, try -12345600000.0
 	
-	MessageArguments.b[0] := TRUE;
-	MessageArguments.r[0] := 78.768;
-	MessageArguments.i[0] := -2144327918; // Example: ArEventLog error ID
-	MessageArguments.s[0] := 'INIT';
+	// Runtime values
+	MessageArguments.b[0] := TRUE; // BOOL
+	MessageArguments.r[0] := 78.768; // REAL
+	MessageArguments.i[0] := -2144327918; // DINT, e.g. Status ID
+	MessageArguments.s[0] := 'INIT'; // STRING
 	
 	sConstructMessage := 'Status %b, Temp %r F, Code %i, State %s';
 	
