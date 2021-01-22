@@ -2,8 +2,10 @@
 
 A sample Automation Studio project demonstrating the IecFrmtStr library. This repository also serves the development of the IecFrmtStr library with [release updates](https://github.com/tmatijevich/LibIecFrmtStr/releases).
 
-Clone the project: `git@github.com:tmatijevich/LibIecFrmtStr.git`
-- Alternatively: `ssh://git@ssh.github.com:443/tmatijevich/LibIecFrmtStr.git`
+- Clone the project: `git@github.com:tmatijevich/LibIecFrmtStr.git`
+	- Alternatively: `ssh://git@ssh.github.com:443/tmatijevich/LibIecFrmtStr.git`
+- [Download IecFrmtStr library](https://github.com/tmatijevich/LibIecFrmtStr/releases/download/0.2.3/IecFrmtStr_V0.02.3.zip)
+- [Download LibIecFrtmStr sample project](https://github.com/tmatijevich/LibIecFrmtStr/releases/download/0.2.3/LibIecFrmtStr.zip)
 
 ## IecFrmtStr
 
