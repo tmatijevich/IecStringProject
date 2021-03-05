@@ -14,7 +14,7 @@ PROGRAM _INIT
 	VarReal 	:= 3.141592653589; // 32 bit floating value with more than enough significant digits, try -12345600000.0
 	
 	// Runtime values
-	MessageArguments.b[0] := TRUE; // BOOL
+	MessageArguments.b[0] := FALSE; // BOOL
 	MessageArguments.r[0] := 78.768; // REAL
 	MessageArguments.i[0] := -2144327918; // DINT, e.g. Status ID
 	MessageArguments.s[0] := 'INIT'; // STRING
