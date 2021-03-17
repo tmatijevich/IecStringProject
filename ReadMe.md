@@ -4,8 +4,8 @@ A sample Automation Studio project demonstrating the IecFrmtStr library. This re
 
 - Clone the project: `git@github.com:tmatijevich/LibIecFrmtStr.git`
 	- Alternatively: `ssh://git@ssh.github.com:443/tmatijevich/LibIecFrmtStr.git`
-- [Download IecFrmtStr library](https://github.com/tmatijevich/LibIecFrmtStr/releases/download/0.2.3/IecFrmtStr.zip)
-- [Download LibIecFrtmStr sample project](https://github.com/tmatijevich/LibIecFrmtStr/releases/download/0.2.3/LibIecFrmtStr.zip)
+- [Download IecFrmtStr library](https://github.com/tmatijevich/LibIecFrmtStr/releases/download/0.2.4/IecFrmtStr.zip)
+- [Download LibIecFrtmStr sample project](https://github.com/tmatijevich/LibIecFrmtStr/releases/download/0.2.4/LibIecFrmtStr.zip)
 
 ## IecFrmtStr
 
@@ -17,7 +17,7 @@ Format strings using the keys `%b`, `%r`, `%i`, and `%s` for BOOLs, REALs, DINTs
 
 
 ```
-MessageArguments.b[0] := TRUE; // BOOL
+MessageArguments.b[0] := FALSE; // BOOL
 MessageArguments.r[0] := 78.768; // REAL
 MessageArguments.i[0] := -2144327918; // DINT
 MessageArguments.s[0] := 'INIT'; // STRING
@@ -32,16 +32,16 @@ IecFormatString(pDestination := ADR(sFormattedMessage),
 
 1. Download the LibIecFrmtStr Automation Studio project and perform an offline installation.
 2. Open the watch window for the Sample task.
-3. The `IecFormatString` call assigns `'Status TRUE, Temp 78.768 F, Code -2144327918, State INIT'` to `sFormattedMessage`
+3. The `IecFormatString` call assigns `'Status FALSE, Temp 78.768 F, Code -2144327918, State INIT'` to `sFormattedMessage`
 
 ## Automation Studio
-Version 4.7.5.60 SP
+Version 4.9.2.46
 
 ## Automation Runtime
 
 Component 				| Project 			| Config - Simulation	
 ------------------------|-------------------|-----------------------
-Automation Runtime		| x					| B4.73 
+Automation Runtime		| x					| C4.90 
 Visual Components		| x 				| n/d 
 mapp Motion 			| n/d 				| x 
 mapp View 				| n/d 				| x 
