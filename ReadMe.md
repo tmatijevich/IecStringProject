@@ -34,8 +34,12 @@ IecFormatString(pDestination := ADR(sFormattedMessage),
 2. Open the watch window for the Sample task.
 3. The `IecFormatString` call assigns `'Status FALSE, Temp 78.768 F, Code -2144327918, State INIT'` to `sFormattedMessage`
 
+## Git
+- [Install and setup Git](https://tmatijevich.github.io/gfw-tutorial/)
+- [Setup gitignore for your repository](https://gist.github.com/tmatijevich/453436f1e6abc62a3d052d9b03f9db58)
+
 ## Automation Studio
-Version 4.9.2.46
+Version 4.9.3.144 SP
 
 ## Automation Runtime
 
@@ -51,9 +55,3 @@ mapp Control 			| n/d 				| x
 mapp Cockpit 			| n/d 				| x 
 Safety Release 			| n/d 				| x 
 
-## Dependencies
-- AsBrStr
-
-## Recommendations
-- IecCheck
-	- sys_lib
