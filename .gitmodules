@@ -1,0 +1,3 @@
+[submodule "Logical/Libraries/IecFrmtStr"]
+	path = Logical/Libraries/IecFrmtStr
+	url = ssh://git@ssh.github.com:443/tmatijevich/IecString.git
