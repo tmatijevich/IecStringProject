@@ -30,10 +30,7 @@ PROGRAM _CYCLIC
 	ReturnReal := brsftoa(VarReal, ADR(sReal));
 
 	// The watch window will only print out 85 characters
-	IecFormatString(pDestination := ADR(sFormattedMessage), 
-					DestinationLength := SIZEOF(sFormattedMessage), 
-					pSource := ADR(sConstructMessage), 
-					pArguments := ADR(MessageArguments));
+	IecFormatString(sFormattedMessage, SIZEOF(sFormattedMessage), sConstructMessage, MessageArguments);
 	StrLen := brsstrlen(ADR(sFormattedMessage));
 	
 END_PROGRAM

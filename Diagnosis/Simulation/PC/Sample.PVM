@@ -1,5 +1,5 @@
 WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Sample 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 Index=33 ASCIIString=0
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 Index=30 ASCIIString=1
                                     name                                     type force                                                            value level type len format place expand specs
                                  VarDint                                     DINT    0 "                                                           45678"    0    4    1   10    1    0         
                                    sDint                               STRING[80]    0 "                                                         '45678'"    0    9   81    1    1    0         
@@ -7,20 +7,20 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 I
                                  VarReal                                     REAL    0 "                                                      3.14159274"    0    8    1   10    1    0         
                                    sReal                               STRING[80]    0 "                                                       '3.14159'"    0    9   81    1    1    0         
                               ReturnReal                                     UINT    0 "                                                               7"    0    6    1   10    1    0         
-                       sConstructMessage                               STRING[80]    0 "                       'Status %b, Temp %r F, Code %i, State %s'"    0    9   81    1    1    0         
+                       sConstructMessage                               STRING[80]    0 "               'Status %b, Temp %r F, Code %i, State %s %%Tyler'"    0    9   81    1    1    0         
                         MessageArguments                FormatStringArgumentsType    0 "                                                               *"    0   24    1    0    1    1         
                                        b                               BOOL[0..4]    0 "                                                               *"    1    1    5    0    0    1         
-                                    b[0]                                     BOOL    0 "                                                            TRUE"    2    1    1    2    0    0         
+                                    b[0]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                     b[1]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                     b[2]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                     b[3]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                     b[4]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
-                                       r                               REAL[0..4]    0 "                                                               *"    1    8    5    0    0    1         
-                                    r[0]                                     REAL    0 "                                                          78.768"    2    8    1   10    0    0         
-                                    r[1]                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
-                                    r[2]                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
-                                    r[3]                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
-                                    r[4]                                     REAL    0 "                                                             0.0"    2    8    1   10    0    0         
+                                       r                              LREAL[0..4]    0 "                                                               *"    1   14    5    0    0    1         
+                                    r[0]                                    LREAL    0 "                                              78.767997741699219"    2   14    1   10    0    0         
+                                    r[1]                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                    r[2]                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                    r[3]                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
+                                    r[4]                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
                                        i                               DINT[0..4]    0 "                                                               *"    1    4    5    0    0    1         
                                     i[0]                                     DINT    0 "                                                     -2144327918"    2    4    1   10    0    0         
                                     i[1]                                     DINT    0 "                                                               0"    2    4    1   10    0    0         
@@ -33,5 +33,5 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 I
                                     s[2]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[3]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[4]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
-                       sFormattedMessage                               STRING[80]    0 "      'Status TRUE, Temp 78.768 F, Code -2144327918, State INIT'"    0    9   81    1    1    0         
-                                  StrLen                                    UDINT    0 "                                                              56"    0    7    1   10    1    0         
+                       sFormattedMessage                               STRING[80]    0 "'Status FALSE, Temp 78.768 F, Code -2144327918, State INIT %Tyler'"    0    9   81    1    1    0         
+                                  StrLen                                    UDINT    0 "                                                              64"    0    7    1   10    1    0         
