@@ -1,0 +1,6 @@
+VAR
+	formatMessage : STRING[80];
+	formatArgs : FormatStringArgumentsType;
+	message : STRING[80];
+	messageLength : UDINT;
+END_VAR

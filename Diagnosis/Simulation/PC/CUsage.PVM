@@ -1,14 +1,8 @@
-WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=Sample 
-Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 Index=33 ASCIIString=1
+WATCH Ver=2.00 PLCName=PLC1 CPUName=CPU TaskName=CUsage 
+Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=100 Scope=60 Force=60 Index=28 ASCIIString=0
                                     name                                     type force                                                            value level type len format place expand specs
-                                 VarDint                                     DINT    0 "                                                           45678"    0    4    1   10    1    0         
-                                   sDint                               STRING[80]    0 "                                                         '45678'"    0    9   81    1    1    0         
-                              ReturnDint                                     UINT    0 "                                                               5"    0    6    1   10    1    0         
-                                 VarReal                                     REAL    0 "                                                      3.14159274"    0    8    1   10    1    0         
-                                   sReal                               STRING[80]    0 "                                                       '3.14159'"    0    9   81    1    1    0         
-                              ReturnReal                                     UINT    0 "                                                               7"    0    6    1   10    1    0         
-                           FormatMessage                               STRING[80]    0 "                       'Status %b, Temp %r F, Code %i, State %s'"    0    9   81    1    1    0         
-                              FormatArgs                FormatStringArgumentsType    0 "                                                               *"    0   24    1    0    1    1         
+                           formatMessage                               STRING[80]    0 "                       'Status %b, Temp %r F, Code %i, State %s'"    0    9   81    1    1    0         
+                              formatArgs                FormatStringArgumentsType    0 "                                                               *"    0   24    1    0    1    1         
                                        b                               BOOL[0..4]    0 "                                                               *"    1    1    5    0    0    1         
                                     b[0]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                     b[1]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
@@ -16,7 +10,7 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 I
                                     b[3]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                     b[4]                                     BOOL    0 "                                                           FALSE"    2    1    1    2    0    0         
                                        r                              LREAL[0..4]    0 "                                                               *"    1   14    5    0    0    1         
-                                    r[0]                                    LREAL    0 "                                              78.767997741699219"    2   14    1   10    0    0         
+                                    r[0]                                    LREAL    0 "                                                          78.768"    2   14    1   10    0    0         
                                     r[1]                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
                                     r[2]                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
                                     r[3]                                    LREAL    0 "                                                             0.0"    2   14    1   10    0    0         
@@ -33,5 +27,5 @@ Position X=0 Y=0 Width=0 Height=0 TabWidth Name=200 Type=165 Scope=60 Force=60 I
                                     s[2]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[3]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
                                     s[4]                               STRING[80]    0 "                                                              ''"    2    9   81    1    0    0         
-                                 Message                               STRING[80]    0 "     'Status FALSE, Temp 78.768 F, Code -2144327918, State INIT'"    0    9   81    1    1    0         
-                           MessageLength                                    UDINT    0 "                                                               0"    0    7    1   10    1    0         
+                                 message                               STRING[80]    0 "     'Status FALSE, Temp 78.768 F, Code -2144327918, State INIT'"    0    9   81    1    1    0         
+                           messageLength                                    UDINT    0 "                                                              57"    0    7    1   10    1    0         
