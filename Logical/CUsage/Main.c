@@ -20,7 +20,7 @@ void _INIT ProgramInit(void)
 
 void _CYCLIC ProgramCyclic(void)
 {
-	messageLength = IecFormatString(0, sizeof(message), formatMessage, &formatArgs);
+	messageLength = IecFormatString(message, sizeof(message), formatMessage, &formatArgs);
 }
 
 void _EXIT ProgramExit(void)
