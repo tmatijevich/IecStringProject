@@ -1,8 +1,12 @@
 # Git Repository File Ignore Specifications
 # B&R Automation Studio project files
-# File: 		.gitignore
-# Date: 		2019-09-19
-# Created by: 	Tyler Matijevich
+# File:         .gitignore
+# Date:         2019-09-19
+# Created by:   Tyler Matijevich
+# Webpage:      https://gist.github.com/tmatijevich/453436f1e6abc62a3d052d9b03f9db58
+
+# Git ignore syntax: `*` any name, `**/` any depth, `/**` all files, `!` exception, `#` comment
+# More information at https://git-scm.com/docs/gitignore
 
 # Ignore AR version
 **/AS/System
@@ -42,7 +46,7 @@
 # Project specific ignore paths
 # ******************************************************************************
 # Save watch windows and task trace configurations
-!**/Diagnosis/**/*.PVM
-!**/Diagnosis/**/*.tc
+#!**/Diagnosis/**/*.PVM
+#!**/Diagnosis/**/*.tc
 
 # add here

@@ -13,13 +13,15 @@ PROGRAM _INIT
 	VarDint 	:= 45678; // Try -2147483648
 	VarReal 	:= 3.141592653589; // 32 bit floating value with more than enough significant digits, try -12345600000.0
 	
+	Size := SIZEOF(Message);
+	
 	// Runtime values
 	FormatArgs.b[0] := FALSE; // BOOL
 	FormatArgs.r[0] := 78.768; // LREAL
 	FormatArgs.i[0] := -2144327918; // DINT, e.g. Status ID
 	FormatArgs.s[0] := 'INIT'; // STRING
 	
-	FormatMessage := 'Status %b, Temp %r F, Code %i, State %s';
+	Format := 'Status %b, Temp %r F, Code %i, State %s';
 	
 END_PROGRAM
 
@@ -30,10 +32,7 @@ PROGRAM _CYCLIC
 	ReturnReal := brsftoa(VarReal, ADR(sReal));
 
 	// The watch window will only print out 85 characters
-	MessageLength := IecFormatString(str := Message,
-	                                 size := SIZEOF(Message),
-	                                 format := FormatMessage,
-	                                 args := FormatArgs);
+	Length := IecFormatString(Message, Size, Format, FormatArgs);
 									 
 END_PROGRAM
 

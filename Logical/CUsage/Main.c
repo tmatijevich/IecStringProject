@@ -15,12 +15,12 @@ void _INIT ProgramInit(void)
 	formatArgs.i[0] = -2144327918; // DINT, e.g. Status ID
 	strcpy(formatArgs.s[0], "INIT"); // STRING
 	
-	strcpy(formatMessage, "Status %b, Temp %r F, Code %i, State %s");
+	strcpy(format, "Status %b, Temp %r F, Code %i, State %s");
 }
 
 void _CYCLIC ProgramCyclic(void)
 {
-	messageLength = IecFormatString(message, sizeof(message), formatMessage, &formatArgs);
+	length = IecFormatString(message, sizeof(message), format, &formatArgs);
 }
 
 void _EXIT ProgramExit(void)

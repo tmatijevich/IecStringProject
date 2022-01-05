@@ -1,15 +1,16 @@
 VAR
-	FormatMessage : STRING[80];
+	Format : STRING[80];
 	FormatArgs : FormatStringArgumentsType;
 	Message : STRING[80];
-	MessageLength : UDINT;
+	Size : UDINT;
+	Length : UDINT;
 END_VAR
 (*AsBrStr test variables*)
 VAR
 	VarDint : DINT;
-	sDint : STRING[FORMAT_STR_ARGS_LEN];
+	sDint : STRING[80];
 	ReturnDint : UINT;
 	VarReal : REAL;
-	sReal : STRING[FORMAT_STR_ARGS_LEN];
+	sReal : STRING[80];
 	ReturnReal : UINT;
 END_VAR

@@ -1,4 +1,0 @@
-VAR CONSTANT
-	MAX_INDEX_FORMAT_STR_ARGS : USINT := 4;
-	STR_LEN_FORMAT_STR_ARGS : USINT := 80; (*Maximum length of any of the formatted string's string arguments*)
-END_VAR
