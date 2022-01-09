@@ -14,3 +14,10 @@ VAR
 	sReal : STRING[80];
 	ReturnReal : UINT;
 END_VAR
+(*IecPadNumber*)
+VAR
+	MyNumber : DINT;
+	Number : STRING[20];
+	Padding : USINT;
+	Spaces : BOOL;
+END_VAR

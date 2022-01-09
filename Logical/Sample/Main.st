@@ -33,7 +33,10 @@ PROGRAM _CYCLIC
 
 	// The watch window will only print out 85 characters
 	Length := IecFormatString(Message, Size, Format, FormatArgs);
-									 
+	
+	// Pad a number
+	IecPadNumber(MyNumber, Number, Padding, Spaces);
+	
 END_PROGRAM
 
 PROGRAM _EXIT
