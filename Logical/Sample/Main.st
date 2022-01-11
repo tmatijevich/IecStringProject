@@ -23,6 +23,10 @@ PROGRAM _INIT
 	
 	Format := 'Status %b, Temp %r F, Code %i, State %s';
 	
+	MyNumber := -1234;
+	Padding := 6;
+	Spaces := TRUE;
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC

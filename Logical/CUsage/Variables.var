@@ -4,3 +4,10 @@ VAR
 	message : STRING[80];
 	length : UDINT;
 END_VAR
+(*Pad whole number*)
+VAR
+	myNumber : DINT;
+	number : STRING[20];
+	digits : USINT;
+	spaces : BOOL;
+END_VAR
