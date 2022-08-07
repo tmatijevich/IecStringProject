@@ -27,6 +27,10 @@ PROGRAM _INIT
 	Padding := 6;
 	Spaces := TRUE;
 	
+	Sentence := 'five six seven eight nine';
+	FindWord := 'eight';
+	ReplaceWord := 'ate';
+	
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -40,6 +44,22 @@ PROGRAM _CYCLIC
 	
 	// Pad a number
 	IecPadNumber(MyNumber, Number, Padding, Spaces);
+	
+	IecStringCopy(Name1, Name2, SIZEOF(Name1));
+	brsstrcpy(ADR(Name1), ADR(Name2));
+	
+	IF CmdConcat THEN
+		CmdConcat := FALSE;
+		IecStringConcat(Concat1, Concat2, SIZEOF(Concat1));
+	END_IF
+	
+	IF CmdFind THEN
+		CmdFind := FALSE;
+		IecStringReplace(NewSentence, Sentence, FindWord, ReplaceWord, SIZEOF(NewSentence));
+	END_IF
+	SentenceLength := brsstrlen(ADR(Sentence));
+	NewSentenceLength := brsstrlen(ADR(NewSentence));
+	NewSentenceSize := SIZEOF(NewSentence);
 	
 END_PROGRAM
 

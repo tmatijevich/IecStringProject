@@ -20,4 +20,22 @@ VAR
 	Number : STRING[20];
 	Padding : USINT;
 	Spaces : BOOL;
+	Name1 : STRING[10];
+	NameSpace : STRING[10];
+	Name2 : STRING[20];
+	Concat1 : STRING[10];
+	ConcatSpace : STRING[10];
+	Concat2 : STRING[20];
+	CmdConcat : BOOL;
+END_VAR
+(*Find and replace*)
+VAR
+	Sentence : STRING[30];
+	NewSentence : STRING[20];
+	FindWord : STRING[10];
+	ReplaceWord : STRING[10];
+	CmdFind : BOOL;
+	SentenceLength : UDINT;
+	NewSentenceLength : UDINT;
+	NewSentenceSize : UDINT;
 END_VAR
