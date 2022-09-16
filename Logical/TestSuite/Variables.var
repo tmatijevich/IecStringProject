@@ -1,0 +1,3 @@
+VAR
+	TestSuite : UtMgrTestSuite;
+END_VAR
