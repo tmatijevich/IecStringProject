@@ -16,7 +16,7 @@
     <Object Type="Package">mappView</Object>
     <Object Type="Package">mappCockpit</Object>
   </Objects>
-  <Configuration ModuleId="PC_any">
+  <Configuration ModuleId="X20CP1586">
     <AutomationRuntime Version="C4.90" />
     <Build AdditionalBuildOptions="" AnsicIncludeDirectories="\Logical\Libraries\UnitTest\,\Logical\Libraries\UnitTest\include\" GccVersion="4.1.2" IgnoredObjectNamesForBuildWarnings="*README*;*LICENSE*;.git;.gitignore;.github" />
     <DefaultTargetMemory Tasks="UserROM" />
