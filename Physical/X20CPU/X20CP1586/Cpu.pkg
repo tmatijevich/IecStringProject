@@ -6,7 +6,7 @@
   </Objects>
   <Configuration ModuleId="X20CP1586">
     <AutomationRuntime Version="C4.90" />
-    <Build AdditionalBuildOptions="" AnsicIncludeDirectories="\Logical\Libraries\UnitTest\,\Logical\Libraries\UnitTest\include\" GccVersion="4.1.2" IgnoredObjectNamesForBuildWarnings="*README*;*LICENSE*;.git;.gitignore;.github" />
+    <Build AdditionalBuildOptions="" AnsicIncludeDirectories="" GccVersion="4.1.2" IgnoredObjectNamesForBuildWarnings=".git" />
     <DefaultTargetMemory Tasks="UserROM" />
     <Transfer SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" />
     <Vc FirmwareVersion="" />
