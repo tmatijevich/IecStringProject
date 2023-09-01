@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.var": "st",
+        "*.typ": "st",
+        "*.fun": "st",
+        "main.h": "c",
+        "asdefault.h": "c",
+        "utmgr.h": "c",
+        "iecstring.h": "c",
+        "unittest.h": "c"
+    }
+}

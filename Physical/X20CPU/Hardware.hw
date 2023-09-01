@@ -10,5 +10,6 @@
       <Parameter ID="InaPort" Value="11160" />
     </Connector>
     <Parameter ID="ConfigurationID" Value="IecStringProject_X20CPU" />
+    <Parameter ID="Simulation" Value="1" />
   </Module>
 </Hardware>
