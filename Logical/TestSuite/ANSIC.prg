@@ -5,5 +5,6 @@
     <File Description="Init, cyclic, exit code">main.c</File>
     <File Description="Set loader and handler">load.c</File>
     <File Description="Test IecStringCopy">test_copy.c</File>
+    <File Description="Test IecStringConcat">test_concat.c</File>
   </Files>
 </Program>
