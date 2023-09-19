@@ -7,5 +7,6 @@
     <File Description="Test IecStringCopy">test_copy.c</File>
     <File Description="Test IecStringConcat">test_concat.c</File>
     <File Description="Test IecStringReplace">test_replace.c</File>
+    <File Description="Test IecStringFormat">test_format.c</File>
   </Files>
 </Program>
