@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Cpu xmlns="http://br-automation.co.at/AS/Cpu">
+  <Objects>
+    <Object Type="File" Description="Software configuration">Cpu.sw</Object>
+  </Objects>
+  <Configuration ModuleId="X20CP0484">
+    <AutomationRuntime Version="C4.90" />
+    <Build AdditionalBuildOptions="" AnsicIncludeDirectories="\Logical\Libraries\UnitTest\,\Logical\Libraries\UnitTest\include\" GccVersion="4.1.2" IgnoredObjectNamesForBuildWarnings=".git" />
+    <DefaultTargetMemory Tasks="UserROM" />
+    <Transfer SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" />
+    <Vc FirmwareVersion="" />
+  </Configuration>
+</Cpu>
