@@ -5,7 +5,6 @@ VAR
 END_VAR
 (*IecStringFormat*)
 VAR
-	TokenString : STRING[80];
 	FromattedString : STRING[80];
 	FormatValues : IecStringFormatType;
 END_VAR

@@ -32,3 +32,5 @@
 # Uncomment to use
 #!/Diagnosis/**/*.PVM
 #!/Diagnosis/**/*.tc
+
+/Release
