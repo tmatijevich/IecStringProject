@@ -1,0 +1,16 @@
+(*IecStringCopy*)
+VAR
+	Source : STRING[10];
+	Destination : STRING[5];
+END_VAR
+(*IecStringFormat*)
+VAR
+	TokenString : STRING[80];
+	FromattedString : STRING[80];
+	FormatValues : IecStringFormatType;
+END_VAR
+(*IecStringInteger*)
+VAR
+	MyInteger : INT;
+	PaddedInteger : STRING[80];
+END_VAR

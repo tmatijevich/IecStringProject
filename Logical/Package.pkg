@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Program" Language="ANSIC">TestSuite</Object>
+    <Object Type="Program" Language="IEC">IECST</Object>
   </Objects>
 </Package>

@@ -6,6 +6,7 @@
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
     <Task Name="TestSuite" Source="TestSuite.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="IECST" Source="IECST.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />
