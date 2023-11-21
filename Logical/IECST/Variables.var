@@ -1,6 +1,6 @@
 (*IecStringCopy*)
 VAR
-	Source : STRING[10];
+	Source : STRING[10] := 'Program';
 	Destination : STRING[5];
 END_VAR
 (*IecStringFormat*)

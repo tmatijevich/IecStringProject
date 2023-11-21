@@ -1,4 +1,13 @@
 
+PROGRAM _INIT
+	
+	FormatValues.b[0] := TRUE;
+	FormatValues.f[0] := 12.34;
+	FormatValues.i[0] := 33;
+	FormatValues.s[0] := 'All Clear';
+	
+END_PROGRAM
+
 PROGRAM _CYCLIC
 	
 	IecStringCopy(Destination, 
