@@ -1,8 +1,4 @@
 
-#ifdef _DEFAULT_INCLUDES
-    #include <AsDefault.h>
-#endif
-
 #include <UnitTest.h>
 #include <IecString.h>
 #include <string.h>
