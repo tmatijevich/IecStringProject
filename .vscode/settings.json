@@ -7,6 +7,7 @@
         "asdefault.h": "c",
         "utmgr.h": "c",
         "iecstring.h": "c",
-        "unittest.h": "c"
+        "unittest.h": "c",
+        "string.h": "c"
     }
 }

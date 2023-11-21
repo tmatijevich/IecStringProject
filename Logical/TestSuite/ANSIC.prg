@@ -8,5 +8,6 @@
     <File Description="Test IecStringConcat">test_concat.c</File>
     <File Description="Test IecStringReplace">test_replace.c</File>
     <File Description="Test IecStringFormat">test_format.c</File>
+    <File Description="Test IecStringInteger">test_integer.c</File>
   </Files>
 </Program>
