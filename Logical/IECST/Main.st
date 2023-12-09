@@ -24,5 +24,7 @@ PROGRAM _CYCLIC
 		MyInteger, 
 		6, 
 		FALSE);
+		
+	IecStringDateTime(DateTimeString, SIZEOF(DateTimeString), FormatDateTime);
 	
 END_PROGRAM

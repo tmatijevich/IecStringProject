@@ -13,3 +13,8 @@ VAR
 	MyInteger : INT;
 	PaddedInteger : STRING[80];
 END_VAR
+(*IecStringDateTime*)
+VAR
+	DateTimeString : STRING[80];
+	FormatDateTime : STRING[80];
+END_VAR
