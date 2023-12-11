@@ -17,4 +17,7 @@ END_VAR
 VAR
 	DateTimeString : STRING[80];
 	FormatDateTime : STRING[80];
+	DateTime : DTStructure;
+	GetDateTime : DTStructureGetTime;
+	CurrentDateTime : DTStructure;
 END_VAR

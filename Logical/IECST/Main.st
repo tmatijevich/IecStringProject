@@ -25,6 +25,7 @@ PROGRAM _CYCLIC
 		6, 
 		FALSE);
 		
-	IecStringDateTime(DateTimeString, SIZEOF(DateTimeString), FormatDateTime);
+	GetDateTime(enable := TRUE, pDTStructure := ADR(CurrentDateTime));
+	IecStringDateTime(DateTimeString, SIZEOF(DateTimeString), FormatDateTime, DateTime);
 	
 END_PROGRAM
