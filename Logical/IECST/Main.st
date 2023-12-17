@@ -19,7 +19,7 @@ PROGRAM _CYCLIC
 		'Error: %b, Temp: %f C, Step: %i, Message: %s',
 		FormatValues);
 					
-	IecStringPadInt(PaddedInteger, 
+	IecStringInteger(PaddedInteger, 
 		SIZEOF(PaddedInteger), 
 		MyInteger, 
 		6, 
