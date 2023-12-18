@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "*.hhc": "html",
+        "*.hhk": "html",
         "*.var": "st",
         "*.typ": "st",
         "*.fun": "st",
@@ -8,6 +10,8 @@
         "utmgr.h": "c",
         "iecstring.h": "c",
         "unittest.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "plctypes.h": "c",
+        "plc.h": "c"
     }
 }

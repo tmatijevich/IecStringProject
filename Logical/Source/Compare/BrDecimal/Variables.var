@@ -1,0 +1,5 @@
+VAR
+	Number : DINT;
+	NumberText : STRING[14];
+	NumberData : REFERENCE TO ARRAY[0..14] OF USINT;
+END_VAR
