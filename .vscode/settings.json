@@ -8,6 +8,7 @@
         "utmgr.h": "c",
         "iecstring.h": "c",
         "unittest.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "asbrstr.h": "c"
     }
 }
