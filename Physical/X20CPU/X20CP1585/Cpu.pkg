@@ -4,7 +4,7 @@
   <Objects>
     <Object Type="File" Description="Software configuration">Cpu.sw</Object>
   </Objects>
-  <Configuration ModuleId="X20CP1586">
+  <Configuration ModuleId="X20CP1585">
     <AutomationRuntime Version="E4.92" />
     <Build AdditionalBuildOptions="" AnsicIncludeDirectories="\Logical\Libraries\UnitTest\,\Logical\Libraries\UnitTest\include\" GccVersion="4.1.2" IgnoredObjectNamesForBuildWarnings=".git" />
     <DefaultTargetMemory Tasks="UserROM" />
