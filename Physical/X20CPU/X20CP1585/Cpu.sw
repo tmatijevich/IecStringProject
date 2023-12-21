@@ -12,7 +12,6 @@
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
-    <Task Name="TestSuite" Source="Source.UnitTest.TestSuite.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="IECST" Source="Source.Sample.IECST.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="TestCStr" Source="Source.Compare.TestCStr.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </TaskClass>
@@ -32,9 +31,6 @@
   <Libraries>
     <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="IecString" Source="Libraries.IecString.lby" Memory="UserROM" Language="ANSIC" Debugging="false" />
-    <LibraryObject Name="UnitTest" Source="Libraries.UnitTest.lby" Memory="None" Language="ANSIC" Debugging="true" />
-    <LibraryObject Name="UtMgr" Source="Libraries.UtMgr.lby" Memory="UserROM" Language="Binary" Debugging="true" />
-    <LibraryObject Name="UtWs" Source="Libraries.UtWs.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="AsARCfg" Source="Libraries.AsARCfg.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="runtime" Source="Libraries.runtime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="AsIecCon" Source="Libraries.AsIecCon.lby" Memory="UserROM" Language="binary" Debugging="true" />
