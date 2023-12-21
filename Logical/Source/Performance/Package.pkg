@@ -2,7 +2,6 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="Program" Language="ANSIC" Description="Base performance loop 100">PerfBase</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of strcpy">PerfCCopy</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcpy">PerfBrCopy</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of IecStringCopy">PerfISCopy</Object>

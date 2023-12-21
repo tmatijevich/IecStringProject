@@ -2,7 +2,6 @@
 <?AutomationStudio FileVersion="4.9"?>
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
-    <Task Name="PerfBase" Source="Source.Performance.PerfBase.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="PerfCCopy" Source="Source.Performance.PerfCCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="PerfBrCopy" Source="Source.Performance.PerfBrCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="PerfISCopy" Source="Source.Performance.PerfISCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />

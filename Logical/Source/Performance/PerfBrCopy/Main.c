@@ -1,6 +1,6 @@
 
 #include <bur/plc.h>
-#include <bur/plctypes.h>
+#include <stdint.h>
 #include <AsBrStr.h>
 
 void _CYCLIC ProgramCyclic(void)
@@ -8,5 +8,5 @@ void _CYCLIC ProgramCyclic(void)
     char a[81];
     int i;
     for (i = 0; i < 100; i++)
-        brsstrcpy((UDINT)a, "This is a test of string copy performance");
+        brsstrcpy((uint32_t)a, (uint32_t)"This is a test of string copy performance");
 }
