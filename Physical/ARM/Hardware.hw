@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?AutomationStudio Version=4.11.5.46 FileVersion="4.9"?>
+<?AutomationStudio Version=4.11.6.26 FileVersion="4.9"?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
   <Module Name="X20BB67" Type="X20BB67" Version="1.2.0.0" />
   <Module Name="X20CP0484" Type="X20CP0484" Version="1.5.0.0">
@@ -8,7 +8,7 @@
       <Parameter ID="ActivateDevice" Value="1" />
       <Parameter ID="InaPort" Value="11160" />
     </Connector>
-    <Parameter ID="ConfigurationID" Value="IecStringProject_X20CPU" />
+    <Parameter ID="ConfigurationID" Value="IecStringProject_ARM" />
     <Parameter ID="TimerDeviceType" Value="SWIOTIMER" />
     <Parameter ID="Cyclic1Duration" Value="10000" />
     <Parameter ID="Cyclic1Tolerance" Value="10000" />
