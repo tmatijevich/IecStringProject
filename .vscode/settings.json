@@ -10,6 +10,7 @@
         "unittest.h": "c",
         "string.h": "c",
         "asbrstr.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "plctypes.h": "c"
     }
 }

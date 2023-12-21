@@ -2,8 +2,12 @@
 <?AutomationStudio FileVersion="4.9"?>
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
-    <Task Name="CPUCopy" Source="Source.Performance.CPUCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" Disabled="true" />
-    <Task Name="CPUDecimal" Source="Source.Performance.CPUDecimal.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="PerfBase" Source="Source.Performance.PerfBase.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="PerfCCopy" Source="Source.Performance.PerfCCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="PerfBrCopy" Source="Source.Performance.PerfBrCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="PerfISCopy" Source="Source.Performance.PerfISCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="PerfBrDec" Source="Source.Performance.PerfBrDec.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="PerfISDec" Source="Source.Performance.PerfISDec.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
@@ -27,7 +31,7 @@
   </Binaries>
   <Libraries>
     <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
-    <LibraryObject Name="IecString" Source="Libraries.IecString.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <LibraryObject Name="IecString" Source="Libraries.IecString.lby" Memory="UserROM" Language="ANSIC" Debugging="false" />
     <LibraryObject Name="UnitTest" Source="Libraries.UnitTest.lby" Memory="None" Language="ANSIC" Debugging="true" />
     <LibraryObject Name="UtMgr" Source="Libraries.UtMgr.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="UtWs" Source="Libraries.UtWs.lby" Memory="UserROM" Language="Binary" Debugging="true" />
