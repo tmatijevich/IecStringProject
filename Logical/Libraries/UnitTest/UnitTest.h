@@ -215,8 +215,8 @@ void UNTITTEST_TESTSET_HANDLER();
 
 
 
-#if (__GNUC__ != 4) || (__GNUC_MINOR__ != 1) || (__GNUC_PATCHLEVEL__ != 2)
-#warning UnitTest is compiled with GCC version 4.1.2. To use UnitTest switch GCC version to 4.1.2 or use different solution package 
+#if (__GNUC__ != 6) || (__GNUC_MINOR__ != 3) || (__GNUC_PATCHLEVEL__ != 0)
+#error UnitTest is compiled with GCC version 6.3.0. To use UnitTest switch GCC version to 6.3.0 or import a different solution package 
 #endif
 
 
