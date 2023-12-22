@@ -2,11 +2,11 @@
 <?AutomationStudio FileVersion="4.9"?>
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
-    <Task Name="PerfCCopy" Source="Source.Performance.PerfCCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="PerfBrCopy" Source="Source.Performance.PerfBrCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="PerfISCopy" Source="Source.Performance.PerfISCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="PerfBrDec" Source="Source.Performance.PerfBrDec.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="PerfISDec" Source="Source.Performance.PerfISDec.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="ACopy1C" Source="Source.Performance.ACopy1C.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="ACopy2Br" Source="Source.Performance.ACopy2Br.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="ACopy3IS" Source="Source.Performance.ACopy3IS.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="EDec2Br" Source="Source.Performance.EDec2Br.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="EDec3IS" Source="Source.Performance.EDec3IS.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
