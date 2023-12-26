@@ -11,6 +11,9 @@
         "iecstring.h": "c",
         "unittest.h": "c",
         "string.h": "c",
+        "asbrstr.h": "c",
+        "stdlib.h": "c"
+        "string.h": "c",
         "plctypes.h": "c",
         "plc.h": "c"
     }
