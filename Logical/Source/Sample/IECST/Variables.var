@@ -21,3 +21,10 @@ VAR
 	GetDateTime : DTStructureGetTime;
 	CurrentDateTime : DTStructure;
 END_VAR
+(*Raw characters*)
+VAR
+	Raw1 : ARRAY[0..10] OF USINT;
+	Raw2 : ARRAY[0..10] OF USINT;
+	ReferenceString1 : REFERENCE TO STRING[10];
+	ReferenceString2 : REFERENCE TO STRING[10];
+END_VAR

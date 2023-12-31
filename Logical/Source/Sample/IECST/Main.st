@@ -13,6 +13,10 @@ PROGRAM _CYCLIC
 	IecStringCopy(Destination, 
 		SIZEOF(Destination),
 		Source);
+		
+	ReferenceString1 ACCESS ADR(Raw1);
+	ReferenceString2 ACCESS ADR(Raw2);
+	IecStringCopy(ReferenceString1, SIZEOF(ReferenceString1), ReferenceString2);
 	
 	IecStringFormat(FromattedString, 
 		SIZEOF(FromattedString), 

@@ -9,5 +9,6 @@
     <File Description="Test IecStringReplace">test_replace.c</File>
     <File Description="Test IecStringFormat">test_format.c</File>
     <File Description="Test IecStringInteger">test_integer.c</File>
+    <File Description="Test IecStringFloat">test_float.c</File>
   </Files>
 </Program>

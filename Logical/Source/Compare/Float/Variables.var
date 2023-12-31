@@ -1,0 +1,6 @@
+VAR
+	FloatValue : REAL;
+	DoublePromotionValue : LREAL;
+	LibFloatText : STRING[80];
+	BrsFloatText : STRING[80];
+END_VAR

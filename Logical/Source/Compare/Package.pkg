@@ -3,5 +3,6 @@
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="Program" Language="ANSIC" Description="Test cstring">TestCStr</Object>
+    <Object Type="Program" Language="IEC">Float</Object>
   </Objects>
 </Package>

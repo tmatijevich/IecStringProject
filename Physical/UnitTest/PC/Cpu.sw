@@ -3,6 +3,8 @@
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
     <Task Name="TestSuite" Source="Source.UnitTest.TestSuite.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="IECST" Source="Source.Sample.IECST.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="Float" Source="Source.Compare.Float.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
@@ -11,6 +13,15 @@
   <TaskClass Name="Cyclic#6" />
   <TaskClass Name="Cyclic#7" />
   <TaskClass Name="Cyclic#8" />
+  <Binaries>
+    <BinaryObject Name="udbdef" Source="" Memory="UserROM" Language="Binary" />
+    <BinaryObject Name="TCData" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="sysconf" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="ashwd" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="asfw" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="arconfig" Source="" Memory="SystemROM" Language="Binary" />
+    <BinaryObject Name="ashwac" Source="" Memory="UserROM" Language="Binary" />
+  </Binaries>
   <Libraries>
     <LibraryObject Name="IecString" Source="Libraries.IecString.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
