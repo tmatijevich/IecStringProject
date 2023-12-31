@@ -5,6 +5,9 @@
     <Object Type="Program" Language="ANSIC" Description="Performance of strcpy">ACopy1C</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcpy">ACopy2Br</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of IecStringCopy">ACopy3IS</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of strcat">BCat1C</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcat">BCat2Br</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of IecStringConcat">BCat3IS</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of brsitoa">EDec2Br</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of IecStringInteger">EDec3IS</Object>
   </Objects>
