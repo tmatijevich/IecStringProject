@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?AutomationStudio FileVersion="4.9"?>
+<BR.AS.HardwareTopology>
+  <TimeStamps>
+    <TimeStamp LogicalPath="UnitTest.Hardware.hw" LastWriteTime="12/31/2023 13:32:06" />
+  </TimeStamps>
+  <Modules>
+    <Module Name="PC" Type="PC_any" X="100" Y="100" />
+  </Modules>
+  <Links />
+  <InfoElements />
+</BR.AS.HardwareTopology>
