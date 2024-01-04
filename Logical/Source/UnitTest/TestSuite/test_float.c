@@ -141,7 +141,8 @@ _TEST test_float_10_n6(void) {
 
     status = IecStringFloat(a, sizeof(a), 0.000001f);
 
-    TEST_ASSERT_EQUAL_STRING("0.000001", a);
+    /* This is stored as 9.999999e-7 */
+    TEST_ASSERT_EQUAL_STRING("1.00000e-6", a);
     TEST_ASSERT_EQUAL_INT(0, status);
 
     TEST_DONE;
