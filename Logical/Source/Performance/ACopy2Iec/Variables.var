@@ -1,0 +1,4 @@
+VAR
+	i : INT;
+	a : STRING[80];
+END_VAR

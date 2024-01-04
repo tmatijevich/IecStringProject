@@ -3,18 +3,14 @@
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
     <Task Name="ACopy1C" Source="Source.Performance.ACopy1C.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="ACopy2Br" Source="Source.Performance.ACopy2Br.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="ACopy3IS" Source="Source.Performance.ACopy3IS.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="BCat1C" Source="Source.Performance.BCat1C.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="BCat2Br" Source="Source.Performance.BCat2Br.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="BCat3IS" Source="Source.Performance.BCat3IS.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="EDec2Br" Source="Source.Performance.EDec2Br.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="EDec3IS" Source="Source.Performance.EDec3IS.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="PerfCCopy" Source="" Memory="UserROM" Language="Binary" />
-    <Task Name="PerfBrCopy" Source="" Memory="UserROM" Language="Binary" />
-    <Task Name="PerfISDec" Source="" Memory="UserROM" Language="Binary" />
-    <Task Name="PerfBrDec" Source="" Memory="UserROM" Language="Binary" />
-    <Task Name="PerfISCopy" Source="" Memory="UserROM" Language="Binary" />
+    <Task Name="ACopy2Iec" Source="Source.Performance.ACopy2Iec.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="ACopy3Brs" Source="Source.Performance.ACopy3Brs.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="ACopy4Lib" Source="Source.Performance.ACopy4Lib.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="PerfCCopy" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <Task Name="PerfBrCopy" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <Task Name="PerfISDec" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <Task Name="PerfBrDec" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <Task Name="PerfISCopy" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />

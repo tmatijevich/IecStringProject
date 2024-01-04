@@ -2,9 +2,10 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="Program" Language="ANSIC" Description="Performance of strcpy">ACopy1C</Object>
-    <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcpy">ACopy2Br</Object>
-    <Object Type="Program" Language="ANSIC" Description="Performance of IecStringCopy">ACopy3IS</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of strcpy from string.h">ACopy1C</Object>
+    <Object Type="Program" Language="IEC" Description="Performace of string assignment in IEC language">ACopy2Iec</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcpy">ACopy3Brs</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of IecStringCopy">ACopy4Lib</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of strcat">BCat1C</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcat">BCat2Br</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of IecStringConcat">BCat3IS</Object>

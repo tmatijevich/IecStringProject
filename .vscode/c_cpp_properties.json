@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:/BrAutomation/AS411/AS/gnuinst/V4.1.2/4.9/i386-elf/include",
-                "C:\BrAutomation\AS411\AS\gnuinst\V6.3.0\4.9\i686-elf\include"
+                "C:/BrAutomation/AS411/AS/gnuinst/V6.3.0/4.9/i686-elf/include"
             ],
             "defines": [
                 "_DEBUG",

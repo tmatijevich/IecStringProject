@@ -1,4 +1,3 @@
-
 #include <bur/plc.h>
 #include <IecString.h>
 
