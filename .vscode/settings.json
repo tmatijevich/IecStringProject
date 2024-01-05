@@ -11,6 +11,7 @@
         "string.h": "c",
         "asbrstr.h": "c",
         "stdlib.h": "c",
-        "plctypes.h": "c"
+        "plctypes.h": "c",
+        "stdint.h": "c"
     }
 }

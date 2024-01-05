@@ -6,6 +6,10 @@
     <Task Name="ACopy2Iec" Source="Source.Performance.ACopy2Iec.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="ACopy3Brs" Source="Source.Performance.ACopy3Brs.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="ACopy4Lib" Source="Source.Performance.ACopy4Lib.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="BCat1C" Source="Source.Performance.BCat1C.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="BCat2Iec" Source="Source.Performance.BCat2Iec.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="BCat3Brs" Source="Source.Performance.BCat3Brs.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="BCat4Lib" Source="Source.Performance.BCat4Lib.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="PerfCCopy" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <Task Name="PerfBrCopy" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
     <Task Name="PerfISDec" Source="" Memory="UserROM" Language="Binary" Debugging="true" />

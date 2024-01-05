@@ -7,8 +7,9 @@
     <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcpy">ACopy3Brs</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of IecStringCopy">ACopy4Lib</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of strcat">BCat1C</Object>
-    <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcat">BCat2Br</Object>
-    <Object Type="Program" Language="ANSIC" Description="Performance of IecStringConcat">BCat3IS</Object>
+    <Object Type="Program" Language="IEC" Description="Performance of CONCAT">BCat2Iec</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of brsstrcat">BCat3Brs</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of IecStringConcat">BCat4Lib</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of brsitoa">EDec2Br</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of IecStringInteger">EDec3IS</Object>
   </Objects>
