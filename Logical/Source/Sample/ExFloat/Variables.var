@@ -1,0 +1,4 @@
+VAR
+	Float : REAL;
+	FloatText : STRING[80];
+END_VAR

@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "*.hhc": "html",
+        "*.hhk": "html",
         "*.var": "st",
         "*.typ": "st",
         "*.fun": "st",
@@ -13,5 +15,8 @@
         "stdlib.h": "c",
         "plctypes.h": "c",
         "stdint.h": "c"
+        "string.h": "c",
+        "plctypes.h": "c",
+        "plc.h": "c"
     }
 }
