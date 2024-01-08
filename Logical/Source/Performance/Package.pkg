@@ -12,5 +12,8 @@
     <Object Type="Program" Language="ANSIC" Description="Performance of IecStringConcat">BCat4Lib</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of brsitoa">EDec2Br</Object>
     <Object Type="Program" Language="ANSIC" Description="Performance of IecStringInteger">EDec3IS</Object>
+    <Object Type="Program" Language="IEC" Description="Performance of AsIecCon's REAL_TO_STRING">FFp2Iec</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of AsBrStr's brsftoa">FFp3Brs</Object>
+    <Object Type="Program" Language="ANSIC" Description="Performance of IecStringFloat">FFp4Lib</Object>
   </Objects>
 </Package>
