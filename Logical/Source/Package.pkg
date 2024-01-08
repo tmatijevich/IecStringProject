@@ -4,7 +4,6 @@
   <Objects>
     <Object Type="Package">UnitTest</Object>
     <Object Type="Package">Sample</Object>
-    <Object Type="Package">Compare</Object>
     <Object Type="Package">Performance</Object>
   </Objects>
 </Package>

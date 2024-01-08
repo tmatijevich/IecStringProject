@@ -12,7 +12,7 @@ _TEST replace_basic(void) {
     strcpy(f, "quick");
     strcpy(r, "slow");
 
-    status = IecStringReplace(a, sizeof(a), f, r, b);
+    status = IecStringReplace(a, sizeof(a), b, f, r);
 
     TEST_ASSERT_EQUAL_STRING("The slow brown fox", a);
     TEST_ASSERT_EQUAL_INT(0, status);
@@ -28,7 +28,7 @@ _TEST replace_multiple(void) {
     strcpy(f, " ");
     strcpy(r, "_");
 
-    status = IecStringReplace(a, sizeof(a), f, r, b);
+    status = IecStringReplace(a, sizeof(a), b, f, r);
 
     TEST_ASSERT_EQUAL_STRING("The_quick_brown_fox", a);
     TEST_ASSERT_EQUAL_INT(0, status);
@@ -82,7 +82,7 @@ _TEST replace_null_destination(void) {
     char b[81], f[81], r[81];
     int32_t status;
 
-    status = IecStringReplace(NULL, 11, f, r, b);
+    status = IecStringReplace(NULL, 11, b, f, r);
 
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NULL, status);
 
@@ -98,7 +98,7 @@ _TEST replace_size(void) {
     strcpy(f, "quick");
     strcpy(r, "slow");
 
-    status = IecStringReplace(a, 0, f, r, b);
+    status = IecStringReplace(a, 0, b, f, r);
 
     TEST_ASSERT_EQUAL_STRING("Test", a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
@@ -115,7 +115,7 @@ _TEST replace_length(void) {
     strcpy(f, "The quick brown fox jumps");
     strcpy(r, "slow");
 
-    status = IecStringReplace(a, sizeof(a), f, r, b);
+    status = IecStringReplace(a, sizeof(a), b, f, r);
 
     TEST_ASSERT_EQUAL_STRING("Test", a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_LENGTH, status);
@@ -173,7 +173,7 @@ _TEST replace_truncate(void) {
     strcpy(f, "quick");
     strcpy(r, "slow");
 
-    status = IecStringReplace(a, sizeof(a), f, r, b);
+    status = IecStringReplace(a, sizeof(a), b, f, r);
 
     TEST_ASSERT_EQUAL_STRING("The slow b", a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_WARNING_TRUNCATE, status);

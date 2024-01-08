@@ -3,8 +3,7 @@
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
     <Task Name="TestSuite" Source="Source.UnitTest.TestSuite.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="IECST" Source="Source.Sample.IECST.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="Float" Source="Source.Compare.Float.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="TestFloat" Source="Source.UnitTest.TestFloat.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />

@@ -1,0 +1,10 @@
+VAR
+	FloatValue : REAL;
+	PromotionToDouble : LREAL;
+	LibFloatText : STRING[80];
+	BrsFloatText : STRING[80];
+	FloatRaw : UDINT;
+	TestInfinity : BOOL;
+	TestNotANumber : BOOL;
+	Log10Value : REAL;
+END_VAR
