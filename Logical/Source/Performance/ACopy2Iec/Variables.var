@@ -1,4 +1,4 @@
 VAR
 	i : INT;
-	a : STRING[80];
+	a : STRING[254];
 END_VAR

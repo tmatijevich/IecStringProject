@@ -4,6 +4,8 @@
   <TaskClass Name="Cyclic#1">
     <Task Name="TestSuite" Source="Source.UnitTest.TestSuite.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="TestFloat" Source="Source.UnitTest.TestFloat.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="IECST" Source="" Memory="UserROM" Language="Binary" />
+    <Task Name="TestCopy" Source="Source.UnitTest.TestCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
@@ -30,5 +32,6 @@
     <LibraryObject Name="UtMgr" Source="Libraries.UtMgr.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="sys_lib" Source="Libraries.sys_lib.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="UtWs" Source="Libraries.UtWs.lby" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

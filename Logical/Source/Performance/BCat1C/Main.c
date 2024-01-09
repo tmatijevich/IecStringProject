@@ -1,7 +1,7 @@
 #include <bur/plc.h>
 #include <string.h>
 
-char a[81] = "Hello World! 1234567890.";
+char a[255] = "Hello World! 1234567890.";
 int i;
 
 void _CYCLIC ProgramCyclic(void) {

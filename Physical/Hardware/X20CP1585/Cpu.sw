@@ -17,6 +17,9 @@
     <Task Name="BCat2Iec" Source="Source.Performance.BCat2Iec.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="BCat3Brs" Source="Source.Performance.BCat3Brs.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="BCat4Lib" Source="Source.Performance.BCat4Lib.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="EDec2Iec" Source="Source.Performance.EDec2Iec.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="EDec3Brs" Source="Source.Performance.EDec3Brs.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="EDec4Lib" Source="Source.Performance.EDec4Lib.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="FFp2Iec" Source="Source.Performance.FFp2Iec.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="FFp3Brs" Source="Source.Performance.FFp3Brs.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="FFp4Lib" Source="Source.Performance.FFp4Lib.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />

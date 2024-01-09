@@ -2,7 +2,7 @@
 #include <AsBrStr.h>
 #include <stdint.h>
 
-char a[81] = "Hello World! 1234567890.";
+char a[255] = "Hello World! 1234567890.";
 int i;
 
 void _CYCLIC ProgramCyclic(void) {

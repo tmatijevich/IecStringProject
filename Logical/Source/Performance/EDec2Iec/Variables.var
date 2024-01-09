@@ -1,0 +1,5 @@
+VAR
+	i : INT;
+	number : DINT := -2001001001;
+	a : STRING[20];
+END_VAR
