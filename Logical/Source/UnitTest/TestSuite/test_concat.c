@@ -1,83 +1,147 @@
 #include <UnitTest.h>
 #include <IecString.h>
-#include <string.h>
 #include <stdint.h>
+#include <string.h>
 
-_TEST test_concat_standard(void) {
-    char a[81], b[81];
+#define SAMPLE_STRING_START "Hello"
+#define SAMPLE_STRING_END " World!"
+#define SAMPLE_SIZE 81
+#define LIBRARY_ERROR_NONE 0
+#define LARGE_SIZE 1001
+
+_TEST test_concat_variable(void) {
+    char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
     int32_t status;
 
-    strcpy(a, "Hello");
-    strcpy(b, " World!");
+    strcpy(a, SAMPLE_STRING_START);
+    strcpy(b, SAMPLE_STRING_END);
 
-    /* Concatenate from variable */
     status = IecStringConcat(a, sizeof(a), b);
 
-    TEST_ASSERT_EQUAL_STRING("Hello World!", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START SAMPLE_STRING_END, a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
-    /* Concatenate from literal */
-    strcpy(a, "Hello");
-    status = IecStringConcat(a, sizeof(a), " World!");
+    TEST_DONE;
+}
 
-    TEST_ASSERT_EQUAL_STRING("Hello World!", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+_TEST test_concat_literal(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    strcpy(a, SAMPLE_STRING_START);
+
+    status = IecStringConcat(a, sizeof(a), SAMPLE_STRING_END);
+
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START SAMPLE_STRING_END, a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_concat_size_1(void) {
+    char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
+    int32_t status;
+
+    strcpy(a, "");
+    strcpy(b, SAMPLE_STRING_END);
+
+    status = IecStringConcat(a, 1, b);
+
+    TEST_ASSERT_EQUAL_STRING("", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_WARNING_TRUNCATE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_concat_size_large(void) {
+    char a[SAMPLE_SIZE + LARGE_SIZE], b[LARGE_SIZE];
+    int32_t status;
+
+    strcpy(a, SAMPLE_STRING_START);
+    
+    /* Initialize b */
+    memset(b, 'z', LARGE_SIZE - 1);
+    b[LARGE_SIZE - 1] = '\0';
+
+    status = IecStringConcat(a, sizeof(a), b);
+
+    /* I don't have a good way to assert this
+    if the test runs without crashing, that's good */
+
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_concat_size_invalid(void) {
+    char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
+    int32_t status;
+
+    strcpy(a, SAMPLE_STRING_START);
+    strcpy(b, SAMPLE_STRING_END);
+
+    status = IecStringConcat(a, sizeof(SAMPLE_STRING_START) - 1, b);
+
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START, a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
 
     TEST_DONE;
 }
 
 _TEST test_concat_null_source(void) {
-    char a[81];
+    char a[SAMPLE_SIZE];
     int32_t status;
 
-    strcpy(a, "Hello World!");
+    strcpy(a, SAMPLE_STRING_START);
 
     status = IecStringConcat(a, sizeof(a), NULL);
 
-    TEST_ASSERT_EQUAL_STRING("Hello World!", a);
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START, a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NULL, status);
 
     TEST_DONE;
 }
 
 _TEST test_concat_null_destination(void) {
-    char b[81];
+    char b[SAMPLE_SIZE];
     int32_t status;
 
-    strcpy(b, "Hello World!");
+    strcpy(b, SAMPLE_STRING_END);
 
-    status = IecStringConcat(NULL, 10, b);
+    status = IecStringConcat(NULL, SAMPLE_SIZE, b);
 
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NULL, status);
 
     TEST_DONE;
 }
 
-_TEST test_concat_size(void) {
-    char a[81], b[81];
+_TEST test_concat_size_zero(void) {
+    char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
     int32_t status;
 
-    strcpy(a, "Hello World!");
+    strcpy(a, SAMPLE_STRING_START);
+    strcpy(b, SAMPLE_STRING_END);
 
     status = IecStringConcat(a, 0, b);
 
-    TEST_ASSERT_EQUAL_STRING("Hello World!", a);
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START, a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
 
     TEST_DONE;
 }
 
 _TEST test_concat_overlap_destination(void) {
-    char a[81];
+    char a[SAMPLE_SIZE];
     char* b;
     int32_t status;
 
-    strcpy(a, "Hello");
-    b = a + 6;
+    strcpy(a, SAMPLE_STRING_START);
+    /* Assign source to overlap destination */
+    b = a + sizeof(SAMPLE_STRING_START) / 2;
 
     status = IecStringConcat(a, sizeof(a), b);
 
-    TEST_ASSERT_EQUAL_STRING("Hello", a);
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START, a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_OVERLAP, status);
 
     TEST_DONE;
@@ -85,22 +149,25 @@ _TEST test_concat_overlap_destination(void) {
 
 _TEST test_concat_overlap_source(void) {
     char* a;
-    char b[81];
+    char b[SAMPLE_SIZE];
+    char c[SAMPLE_SIZE];
     int32_t status;
 
-    strcpy(b, "Hello World!");
-    a = b + 6;
+    strcpy(b, SAMPLE_STRING_END);
+    /* Assign destination to overlap source */
+    a = b + sizeof(SAMPLE_STRING_END) / 2;
+    strcpy(c, a);
 
     status = IecStringConcat(a, sizeof(a), b);
 
-    TEST_ASSERT_EQUAL_STRING("World!", a);
+    TEST_ASSERT_EQUAL_STRING(c, a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_OVERLAP, status);
 
     TEST_DONE;
 }
 
 _TEST test_concat_truncate(void) {
-    char a[11], b[81];
+    char a[11], b[SAMPLE_SIZE];
     int32_t status;
 
     strcpy(a, "0123456");
@@ -115,11 +182,15 @@ _TEST test_concat_truncate(void) {
 }
 
 UNITTEST_FIXTURES(fixtures) {
-    new_TestFixture("IecStringConcat standard", test_concat_standard),
+    new_TestFixture("IecStringConcat from variable", test_concat_variable),
+    new_TestFixture("IecStringConcat from literal", test_concat_literal),
+    new_TestFixture("IecStringConcat destination size 1", test_concat_size_1),
+    new_TestFixture("IecStringConcat large size", test_concat_size_large),
+    new_TestFixture("IecStringConcat invalid size", test_concat_size_invalid),
     new_TestFixture("IecStringConcat null source", test_concat_null_source),
     new_TestFixture("IecStringConcat null destination", 
                     test_concat_null_destination),
-    new_TestFixture("IecStringConcat size", test_concat_size),
+    new_TestFixture("IecStringConcat size zero", test_concat_size_zero),
     new_TestFixture("IecStringConcat overlap destination", 
                     test_concat_overlap_destination),
     new_TestFixture("IecStringConcat overlap source", 
