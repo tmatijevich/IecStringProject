@@ -82,6 +82,18 @@ _TEST test_copy_size_large(void) {
     TEST_DONE;
 }
 
+_TEST test_copy_size_exact(void) {
+    char a[11];
+    int32_t status;
+
+    status = IecStringCopy(a, sizeof(a), "0123456789");
+
+    TEST_ASSERT_EQUAL_STRING("0123456789", a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
 _TEST test_copy_null_source(void) {
     char a[SAMPLE_SIZE];
     int32_t status;
@@ -181,6 +193,7 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringCopy empty source", test_copy_empty_source),
     new_TestFixture("IecStringCopy destination size 1", test_copy_size_1),
     new_TestFixture("IecStringCopy large size", test_copy_size_large),
+    new_TestFixture("IecStringCopy exact size", test_copy_size_exact),
     new_TestFixture("IecStringCopy null source", test_copy_null_source),
     new_TestFixture("IecStringCopy null destination", 
                     test_copy_null_destination),

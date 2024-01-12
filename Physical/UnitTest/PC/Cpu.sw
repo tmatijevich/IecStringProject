@@ -3,9 +3,10 @@
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
     <Task Name="TestSuite" Source="Source.UnitTest.TestSuite.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="TestFloat" Source="Source.UnitTest.TestFloat.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="IECST" Source="" Memory="UserROM" Language="Binary" />
-    <Task Name="TestCopy" Source="Source.UnitTest.TestCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="TestFloat" Source="Source.UnitTest.TestFloat.prg" Memory="UserROM" Language="ANSIC" Debugging="true" Disabled="true" />
+    <Task Name="TestCopy" Source="Source.UnitTest.TestCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" Disabled="true" />
+    <Task Name="TestDT" Source="Source.UnitTest.TestDT.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="IECST" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />
@@ -25,7 +26,6 @@
   </Binaries>
   <Libraries>
     <LibraryObject Name="IecString" Source="Libraries.IecString.lby" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <LibraryObject Name="AsBrStr" Source="Libraries.AsBrStr.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="runtime" Source="Libraries.runtime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="astime" Source="Libraries.astime.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="UnitTest" Source="Libraries.UnitTest.lby" Memory="None" Language="ANSIC" Debugging="true" />

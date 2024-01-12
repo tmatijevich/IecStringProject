@@ -5,5 +5,6 @@
     <Object Type="Program" Language="ANSIC">TestSuite</Object>
     <Object Type="Program" Language="ANSIC">TestFloat</Object>
     <Object Type="Program" Language="ANSIC">TestCopy</Object>
+    <Object Type="Program" Language="IEC">TestDT</Object>
   </Objects>
 </Package>

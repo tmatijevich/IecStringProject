@@ -73,6 +73,20 @@ _TEST test_concat_size_large(void) {
     TEST_DONE;
 }
 
+_TEST test_concat_size_exact(void) {
+    char a[sizeof(SAMPLE_STRING_START) + 10];
+    int32_t status;
+
+    strcpy(a, SAMPLE_STRING_START);
+
+    status = IecStringConcat(a, sizeof(a), "0123456789");
+
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START "0123456789", a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
 _TEST test_concat_size_invalid(void) {
     char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
     int32_t status;
@@ -186,6 +200,7 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringConcat from literal", test_concat_literal),
     new_TestFixture("IecStringConcat destination size 1", test_concat_size_1),
     new_TestFixture("IecStringConcat large size", test_concat_size_large),
+    new_TestFixture("IecStringConcat exact size", test_concat_size_exact),
     new_TestFixture("IecStringConcat invalid size", test_concat_size_invalid),
     new_TestFixture("IecStringConcat null source", test_concat_null_source),
     new_TestFixture("IecStringConcat null destination", 
