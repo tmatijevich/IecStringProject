@@ -131,7 +131,7 @@ _TEST test_copy_size_zero(void) {
     status = IecStringCopy(a, 0, b);
 
     TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING, a);
-    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_ZERO, status);
 
     TEST_DONE;
 }

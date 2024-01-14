@@ -97,7 +97,7 @@ _TEST test_concat_size_invalid(void) {
     status = IecStringConcat(a, sizeof(SAMPLE_STRING_START) - 1, b);
 
     TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START, a);
-    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_INVALID, status);
 
     TEST_DONE;
 }
@@ -139,7 +139,7 @@ _TEST test_concat_size_zero(void) {
     status = IecStringConcat(a, 0, b);
 
     TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING_START, a);
-    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_ZERO, status);
 
     TEST_DONE;
 }

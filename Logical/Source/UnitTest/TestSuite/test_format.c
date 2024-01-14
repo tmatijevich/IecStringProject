@@ -151,7 +151,7 @@ _TEST format_size(void) {
     status = IecStringFormat(a, 0, b, &args);
 
     TEST_ASSERT_EQUAL_STRING("Test", a);
-    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_ZERO, status);
 
     TEST_DONE;
 }

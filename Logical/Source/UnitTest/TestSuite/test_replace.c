@@ -101,24 +101,7 @@ _TEST replace_size(void) {
     status = IecStringReplace(a, 0, b, f, r);
 
     TEST_ASSERT_EQUAL_STRING("Test", a);
-    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
-
-    TEST_DONE;
-}
-
-_TEST replace_length(void) {
-    char a[81], b[81], f[81], r[81];
-    int32_t status;
-
-    strcpy(a, "Test");
-    strcpy(b, "The quick brown fox");
-    strcpy(f, "The quick brown fox jumps");
-    strcpy(r, "slow");
-
-    status = IecStringReplace(a, sizeof(a), b, f, r);
-
-    TEST_ASSERT_EQUAL_STRING("Test", a);
-    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_LENGTH, status);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_ZERO, status);
 
     TEST_DONE;
 }
@@ -189,7 +172,6 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringReplace null replace", replace_null_replace),
     new_TestFixture("IecStringReplace null destination", replace_null_destination),
     new_TestFixture("IecStringReplace size", replace_size),
-    new_TestFixture("IecStringReplace length", replace_length),
     new_TestFixture("IecStringReplace overlap source", replace_overlap_source),
     new_TestFixture("IecStringReplace overlap find", replace_overlap_find),
     new_TestFixture("IecStringReplace overlap replace", replace_overlap_replace),

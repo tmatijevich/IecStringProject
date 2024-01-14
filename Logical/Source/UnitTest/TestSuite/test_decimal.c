@@ -91,7 +91,7 @@ _TEST test_decimal_size(void) {
     status = IecStringDecimal(a, sizeof(a), number, 0, '0');
 
     TEST_ASSERT_EQUAL_STRING("abc", a);
-    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE, status);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_INVALID, status);
 
     TEST_DONE;
 }
