@@ -7,5 +7,5 @@ const signed long number = -2001001001;
 
 void _CYCLIC ProgramCyclic(void) {
     for (i = 0; i < 100; i++)
-        IecStringDecimal(a, sizeof(a), number, 5, '0');
+        IecStringDecimal(a, sizeof(a), number, 5, '0', 0);
 }
