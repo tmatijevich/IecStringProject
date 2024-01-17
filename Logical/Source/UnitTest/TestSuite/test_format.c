@@ -1,12 +1,14 @@
-
 #include <UnitTest.h>
 #include <IecString.h>
 #include <string.h>
 #include <stdint.h>
 #include <stdbool.h>
 
-_TEST format_basic(void) {
-    char a[81], b[81];
+#define SAMPLE_SIZE 81
+#define LIBRARY_ERROR_NONE 0
+
+_TEST format_from_variable(void) {
+    char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
@@ -19,24 +21,49 @@ _TEST format_basic(void) {
     status = IecStringFormat(a, sizeof(a), b, &args);
 
     TEST_ASSERT_EQUAL_STRING("Error: TRUE, Temp: 123.456 C, Step: 15, Message: All clear", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST format_from_literal(void) {
+    char a[SAMPLE_SIZE];
+    IecStringFormatType args;
+    int32_t status;
+
+    args.b[0] = true;
+    args.f[0] = 123.456;
+    args.i[0] = 15;
+    strcpy(args.s[0], "All clear");
+
+    status = IecStringFormat(a, sizeof(a), 
+                             "Error: %b, Temp: %f C, Step: %i, Message: %s", 
+                             &args);
+
+    TEST_ASSERT_EQUAL_STRING("Error: TRUE, Temp: 123.456 C, Step: 15, Message: All clear", a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
 _TEST format_bool(void) {
-    char a[81], b[81];
+    char a[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(b, "%b %b %b %b %b %b %b");
-    memset(args.b, 0, sizeof(args.b));
-    args.b[1] = true;
+    args.b[0] = true;
+    args.b[1] = false;
+    args.b[2] = 100;
+    args.b[3] = false;
+    args.b[4] = true;
+    args.b[5] = false;
 
-    status = IecStringFormat(a, sizeof(a), b, &args);
+    status = IecStringFormat(a, sizeof(a), 
+                             "0:%b 1:%b 2:%b 3:%b 4:%b 5:%b 6:%b", &args);
 
-    TEST_ASSERT_EQUAL_STRING("FALSE TRUE FALSE FALSE FALSE FALSE ", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("0:TRUE 1:FALSE 2:TRUE 3:FALSE 4:TRUE 5:FALSE 6:", 
+                             a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;
 }
@@ -190,7 +217,8 @@ _TEST format_truncate(void) {
 }
 
 UNITTEST_FIXTURES(fixtures) {
-    new_TestFixture("IecStringFormat basic", format_basic),
+    new_TestFixture("IecStringFormat from variable", format_from_variable),
+    new_TestFixture("IecStringFormat from literal", format_from_literal),
     new_TestFixture("IecStringFormat bool", format_bool),
     new_TestFixture("IecStringFormat double", format_double),
     new_TestFixture("IecStringFormat int", format_int),
