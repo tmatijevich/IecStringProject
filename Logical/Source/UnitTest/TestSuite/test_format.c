@@ -4,7 +4,8 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define SAMPLE_SIZE 81
+#define SAMPLE_SIZE 121
+#define SAMPLE_STRING "Hello World!"
 #define LIBRARY_ERROR_NONE 0
 
 _TEST format_from_variable(void) {
@@ -20,7 +21,7 @@ _TEST format_from_variable(void) {
 
     status = IecStringFormat(a, sizeof(a), b, &args);
 
-    TEST_ASSERT_EQUAL_STRING("Error: TRUE, Temp: 123.456 C, Step: 15, Message: All clear", a);
+    TEST_ASSERT_EQUAL_STRING("Error: TRUE, Temp: 123.456000 C, Step: 15, Message: All clear", a);
     TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;
@@ -40,7 +41,7 @@ _TEST format_from_literal(void) {
                              "Error: %b, Temp: %f C, Step: %i, Message: %s", 
                              &args);
 
-    TEST_ASSERT_EQUAL_STRING("Error: TRUE, Temp: 123.456 C, Step: 15, Message: All clear", a);
+    TEST_ASSERT_EQUAL_STRING("Error: TRUE, Temp: 123.456000 C, Step: 15, Message: All clear", a);
     TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;
@@ -59,95 +60,96 @@ _TEST format_bool(void) {
     args.b[5] = false;
 
     status = IecStringFormat(a, sizeof(a), 
-                             "0:%b 1:%b 2:%b 3:%b 4:%b 5:%b 6:%b", &args);
+                             "%b, %b, %b, %b, %b, %b, %b", &args);
 
-    TEST_ASSERT_EQUAL_STRING("0:TRUE 1:FALSE 2:TRUE 3:FALSE 4:TRUE 5:FALSE 6:", 
-                             a);
+    TEST_ASSERT_EQUAL_STRING("TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, ", a);
     TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
-_TEST format_double(void) {
-    char a[81], b[81];
+_TEST format_float(void) {
+    char a[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(b, "%f, %f, %f, %f");
-    args.f[0] = -123;
-    args.f[1] = 0.0456;
-    args.f[2] = 12e7;
-    args.f[3] = 123456789;
+    args.f[0] = 1;
+    args.f[1] = 2e34;
+    args.f[2] = -0.00003;
+    args.f[3] = 1.234567;
+    args.f[4] = -1e23;
+    args.f[5] = 0;
 
-    status = IecStringFormat(a, sizeof(a), b, &args);
+    status = IecStringFormat(a, sizeof(a), 
+                             "%f, %f, %f, %f, %f, %f, %f", &args);
 
-    TEST_ASSERT_EQUAL_STRING("-123, 0.0456, 1.2e+08, 1.23457e+08", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("1.000000, 2.000000e+34, -0.000030, 1.234567, -1.000000e+23, 0, ", a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
 _TEST format_int(void) {
-    char a[81], b[81];
+    char a[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(b, "%i, %i, %i, %i, %i");
     args.i[0] = -123;
     args.i[1] = INT32_MAX;
     args.i[2] = INT32_MIN;
     args.i[3] = UINT32_MAX;
     args.i[4] = 2147483648U;
+    args.i[5] = 0;
 
-    status = IecStringFormat(a, sizeof(a), b, &args);
+    status = IecStringFormat(a, sizeof(a), "%i, %i, %i, %i, %i, %i, %i", &args);
 
-    TEST_ASSERT_EQUAL_STRING("-123, 2147483647, -2147483648, -1, -2147483648", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("-123, 2147483647, -2147483648, -1, -2147483648, 0, ", a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
 _TEST format_string(void) {
-    char a[81], b[81];
+    char a[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(b, "%s, %s, %s");
     strcpy(args.s[0], "one");
     strcpy(args.s[1], "two");
     strcpy(args.s[2], "three");
+    strcpy(args.s[3], "apple");
+    strcpy(args.s[4], "banana");
+    strcpy(args.s[5], "carrot");
 
-    status = IecStringFormat(a, sizeof(a), b, &args);
+    status = IecStringFormat(a, sizeof(a), "%s, %s, %s, %s, %s, %s, %s", &args);
 
-    TEST_ASSERT_EQUAL_STRING("one, two, three", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("one, two, three, apple, banana, carrot, ", a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
 _TEST format_null_source(void) {
-    char a[81];
+    char a[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(a, "Test");
+    strcpy(a, SAMPLE_STRING);
 
     status = IecStringFormat(a, sizeof(a), NULL, &args);
 
-    TEST_ASSERT_EQUAL_STRING("Test", a);
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING, a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NULL, status);
 
     TEST_DONE;
 }
 
 _TEST format_null_destination(void) {
-    char b[81];
+    char b[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(b, "Test");
-
-    status = IecStringFormat(NULL, 10, b, &args);
+    status = IecStringFormat(NULL, SAMPLE_SIZE, b, &args);
 
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NULL, status);
 
@@ -155,79 +157,148 @@ _TEST format_null_destination(void) {
 }
 
 _TEST format_null_values(void) {
-    char a[81], b[81];
+    char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
     int32_t status;
 
-    strcpy(a, "Test");
+    strcpy(a, SAMPLE_STRING);
 
     status = IecStringFormat(a, sizeof(a), b, NULL);
 
-    TEST_ASSERT_EQUAL_STRING("Test", a);
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING, a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NULL, status);
 
     TEST_DONE;
 }
 
-_TEST format_size(void) {
-    char a[81], b[81];
+_TEST format_size_zero(void) {
+    char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(a, "Test");
+    strcpy(a, SAMPLE_STRING);
 
     status = IecStringFormat(a, 0, b, &args);
 
-    TEST_ASSERT_EQUAL_STRING("Test", a);
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING, a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_ZERO, status);
 
     TEST_DONE;
 }
 
-_TEST format_overlap(void) {
-    char a[81];
+_TEST format_size_1(void) {
+    char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(a, "Test overlap");
+    strcpy(a, SAMPLE_STRING);
 
-    status = IecStringFormat(a, sizeof(a), a + 5, &args);
+    status = IecStringFormat(a, 1, b, &args);
 
-    TEST_ASSERT_EQUAL_STRING("Test overlap", a);
+    TEST_ASSERT_EQUAL_STRING("", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_WARNING_TRUNCATE, status);
+
+    TEST_DONE;
+}
+
+_TEST format_size_exact_middle(void) {
+    char a[20];
+    IecStringFormatType args;
+    int32_t status;
+
+    strcpy(args.s[0], "quick");
+
+    status = IecStringFormat(a, sizeof(a), "The %s brown fox", &args);
+
+    TEST_ASSERT_EQUAL_STRING("The quick brown fox", a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST format_size_exact_end(void) {
+    char a[20];
+    IecStringFormatType args;
+    int32_t status;
+
+    strcpy(args.s[0], "fox");
+
+    status = IecStringFormat(a, sizeof(a), "The quick brown %s", &args);
+
+    TEST_ASSERT_EQUAL_STRING("The quick brown fox", a);
+    TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST format_overlap_source(void) {
+    char *a, b[SAMPLE_SIZE];
+    IecStringFormatType args;
+    int32_t status;
+
+    strcpy(b, SAMPLE_STRING);
+    a = b + 1;
+
+    status = IecStringFormat(a, SAMPLE_SIZE, b, &args);
+
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING, b);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_OVERLAP, status);
+
+    TEST_DONE;
+}
+
+_TEST format_overlap_destination(void) {
+    char a[SAMPLE_SIZE], *b;
+    IecStringFormatType args;
+    int32_t status;
+
+    strcpy(a, SAMPLE_STRING);
+    b = a + 1;
+
+    status = IecStringFormat(a, sizeof(a), b, &args);
+
+    TEST_ASSERT_EQUAL_STRING(SAMPLE_STRING, a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_OVERLAP, status);
 
     TEST_DONE;
 }
 
 _TEST format_truncate(void) {
-    char a[11], b[81];
+    char a[12];
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(b, "%s, %s, %s");
     strcpy(args.s[0], "one");
     strcpy(args.s[1], "two");
     strcpy(args.s[2], "three");
 
-    status = IecStringFormat(a, sizeof(a), b, &args);
+    status = IecStringFormat(a, sizeof(a), "%s, %s, %s", &args);
 
-    TEST_ASSERT_EQUAL_STRING("one, two, ", a);
+    TEST_ASSERT_EQUAL_STRING("one, two, t", a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_WARNING_TRUNCATE, status);
 
     TEST_DONE;
 }
 
-UNITTEST_FIXTURES(fixtures) {
+UNITTEST_FIXTURES(fixtures){
     new_TestFixture("IecStringFormat from variable", format_from_variable),
     new_TestFixture("IecStringFormat from literal", format_from_literal),
     new_TestFixture("IecStringFormat bool", format_bool),
-    new_TestFixture("IecStringFormat double", format_double),
-    new_TestFixture("IecStringFormat int", format_int),
+    new_TestFixture("IecStringFormat float", format_float),
+    new_TestFixture("IecStringFormat integer", format_int),
     new_TestFixture("IecStringFormat string", format_string),
     new_TestFixture("IecStringFormat null source", format_null_source),
-    new_TestFixture("IecStringFormat null destination", format_null_destination),
+    new_TestFixture("IecStringFormat null destination",
+                    format_null_destination),
     new_TestFixture("IecStringFormat null values", format_null_values),
-    new_TestFixture("IecStringFormat size", format_size),
-    new_TestFixture("IecStringFormat overlap", format_overlap),
+    new_TestFixture("IecStringFormat size zero", format_size_zero),
+    new_TestFixture("IecStringFormat size 1", format_size_1),
+    new_TestFixture("IecStringFormat size exact format middle", 
+                    format_size_exact_middle),
+    new_TestFixture("IecStringFormat size exact format end", 
+                    format_size_exact_end),
+    new_TestFixture("IecStringFormat overlap source", format_overlap_source),
+    new_TestFixture("IecStringFormat overlap destination", 
+                    format_overlap_destination),
     new_TestFixture("IecStringFormat truncate", format_truncate)
 };
 
