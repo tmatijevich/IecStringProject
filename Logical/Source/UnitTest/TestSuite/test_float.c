@@ -260,6 +260,71 @@ _TEST test_float_rollover_n6(void) {
     TEST_DONE;
 }
 
+_TEST test_float_precision_3(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    status = IecStringFloat(a, sizeof(a), 0.123456f, 
+                            DEFAULT_WIDTH, 3, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("0.123", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_precision_3_round(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    status = IecStringFloat(a, sizeof(a), 0.9995f, 
+                            DEFAULT_WIDTH, 3, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("1.000", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_precision_0(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    status = IecStringFloat(a, sizeof(a), 123.456f, 
+                            DEFAULT_WIDTH, 0, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("123", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_precision_0_round(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    status = IecStringFloat(a, sizeof(a), 1.5f, 
+                            DEFAULT_WIDTH, 0, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("2", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_precision_0_notation(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    status = IecStringFloat(a, sizeof(a), 1.5e20f, 
+                            DEFAULT_WIDTH, 0, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("2e+20", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
 UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat from variable", test_float_variable),
     new_TestFixture("IecStringFloat from literal", test_float_literal),
@@ -279,7 +344,15 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat rollover +2", test_float_rollover_p2),
     new_TestFixture("IecStringFloat rollover  0", test_float_rollover_0),
     new_TestFixture("IecStringFloat rollover -3", test_float_rollover_n3),
-    new_TestFixture("IecStringFloat rollover -6", test_float_rollover_n6)
+    new_TestFixture("IecStringFloat rollover -6", test_float_rollover_n6),
+    new_TestFixture("IecStringFloat precision 3", test_float_precision_3),
+    new_TestFixture("IecStringFloat precision 3 round", 
+                    test_float_precision_3_round),
+    new_TestFixture("IecStringFloat precision 0", test_float_precision_0),
+    new_TestFixture("IecStringFloat precision 0 round", 
+                    test_float_precision_0_round),
+    new_TestFixture("IecStringFloat precision 0 scientific notation", 
+                    test_float_precision_0_notation)
 };
 
 UNITTEST_CALLER_TEST(float_set, "IecStringFloat test set", fixtures);
