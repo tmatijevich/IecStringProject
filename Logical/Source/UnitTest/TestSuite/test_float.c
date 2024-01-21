@@ -195,86 +195,67 @@ _TEST test_float_exponent_n6(void) {
     TEST_DONE;
 }
 
-_TEST test_float_10_5_round(void) {
-    char a[81];
+_TEST test_float_rollover_p5(void) {
+    char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 123456.7f, 0, 6, 0);
+    status = IecStringFloat(a, sizeof(a), 999999.95f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
-    TEST_ASSERT_EQUAL_STRING("123457", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("1.000000e+06", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
-_TEST test_float_10_2_round(void) {
-    char a[81];
+_TEST test_float_rollover_p2(void) {
+    char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 123.4567f, 0, 6, 0);
+    status = IecStringFloat(a, sizeof(a), 999.99995f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
-    TEST_ASSERT_EQUAL_STRING("123.457", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("1000.000000", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
-_TEST test_float_10_n3_round(void) {
-    char a[81];
+_TEST test_float_rollover_0(void) {
+    char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 0.0001239f, 0, 6, 0);
+    status = IecStringFloat(a, sizeof(a), 0.99999995f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
-    TEST_ASSERT_EQUAL_STRING("0.000124", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("1.000000", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
-_TEST test_float_10_n6_round(void) {
-    char a[81];
+_TEST test_float_rollover_n3(void) {
+    char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 0.0000019f, 0, 6, 0);
+    status = IecStringFloat(a, sizeof(a), 0.00099999995f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
-    TEST_ASSERT_EQUAL_STRING("0.000002", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("0.001000", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
 
     TEST_DONE;
 }
 
-_TEST test_float_10_5_rollover(void) {
-    char a[81];
+_TEST test_float_rollover_n6(void) {
+    char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 999999.9f, 0, 6, 0);
+    status = IecStringFloat(a, sizeof(a), 0.00000099999995f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
-    TEST_ASSERT_EQUAL_STRING("1.00000e6", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
-
-    TEST_DONE;
-}
-
-_TEST test_float_10_n1_rollover(void) {
-    char a[81];
-    int32_t status;
-
-    status = IecStringFloat(a, sizeof(a), 0.9999999f, 0, 6, 0);
-
-    TEST_ASSERT_EQUAL_STRING("1.00000", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
-
-    TEST_DONE;
-}
-
-_TEST test_float_10_n6_rollover(void) {
-    char a[81];
-    int32_t status;
-
-    status = IecStringFloat(a, sizeof(a), 0.0000099f, 0, 6, 0);
-
-    TEST_ASSERT_EQUAL_STRING("0.000010", a);
-    TEST_ASSERT_EQUAL_INT(0, status);
+    TEST_ASSERT_EQUAL_STRING("0.000001", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
 
     TEST_DONE;
 }
@@ -294,13 +275,11 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat exponent -4", test_float_exponent_n4),
     new_TestFixture("IecStringFloat exponent -5", test_float_exponent_n5),
     new_TestFixture("IecStringFloat exponent -6", test_float_exponent_n6),
-    new_TestFixture("IecStringFloat 10^5 rounding", test_float_10_5_round),
-    new_TestFixture("IecStringFloat 10^2 rounding", test_float_10_2_round),
-    new_TestFixture("IecStringFloat 10^-3 rounding", test_float_10_n3_round),
-    new_TestFixture("IecStringFloat 10^-6 rounding", test_float_10_n6_round),
-    new_TestFixture("IecStringFloat 10^5 rollover", test_float_10_5_rollover),
-    new_TestFixture("IecStringFloat 10^-1 rollover", test_float_10_n1_rollover),
-    new_TestFixture("IecStringFloat 10^-6 rollover", test_float_10_n6_rollover)
+    new_TestFixture("IecStringFloat rollover +5", test_float_rollover_p5),
+    new_TestFixture("IecStringFloat rollover +2", test_float_rollover_p2),
+    new_TestFixture("IecStringFloat rollover  0", test_float_rollover_0),
+    new_TestFixture("IecStringFloat rollover -3", test_float_rollover_n3),
+    new_TestFixture("IecStringFloat rollover -6", test_float_rollover_n6)
 };
 
 UNITTEST_CALLER_TEST(float_set, "IecStringFloat test set", fixtures);
