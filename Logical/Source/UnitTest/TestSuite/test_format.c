@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define SAMPLE_SIZE 121
+#define SAMPLE_SIZE 81
 #define SAMPLE_STRING "Hello World!"
 #define LIBRARY_ERROR_NONE 0
 
@@ -73,9 +73,9 @@ _TEST format_float(void) {
     IecStringFormatType args;
     int32_t status;
 
-    args.f[0] = 1;
+    args.f[0] = 123456;
     args.f[1] = 2e34;
-    args.f[2] = -0.00003;
+    args.f[2] = -567890;
     args.f[3] = 1.234567;
     args.f[4] = -1e23;
     args.f[5] = 0;
@@ -83,7 +83,7 @@ _TEST format_float(void) {
     status = IecStringFormat(a, sizeof(a), 
                              "%f, %f, %f, %f, %f, %f, %f", &args);
 
-    TEST_ASSERT_EQUAL_STRING("1.000000, 2.000000e+34, -0.000030, 1.234567, -1.000000e+23, 0, ", a);
+    TEST_ASSERT_EQUAL_STRING("123456.000000, 2.000000e+34, -567890.000000, 1.234567, -1.000000e+23, 0, ", a);
     TEST_ASSERT_EQUAL_INT(LIBRARY_ERROR_NONE, status);
 
     TEST_DONE;

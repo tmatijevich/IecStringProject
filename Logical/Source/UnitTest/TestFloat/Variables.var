@@ -7,4 +7,5 @@ VAR
 	TestInfinity : BOOL;
 	TestNotANumber : BOOL;
 	Log10Value : REAL;
+	Precision : USINT;
 END_VAR

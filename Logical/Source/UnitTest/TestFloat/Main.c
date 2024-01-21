@@ -6,7 +6,8 @@
 #include <math.h>
 
 void _CYCLIC ProgramCyclic(void) {
-    IecStringFloat(LibFloatText, sizeof(LibFloatText), FloatValue);
+    IecStringFloat(LibFloatText, sizeof(LibFloatText), FloatValue, 0, 
+        Precision, 0);
     brsftoa(FloatValue, (uint32_t)BrsFloatText);
     PromotionToDouble = FloatValue;
     FloatRaw = *(uint32_t*)&FloatValue;

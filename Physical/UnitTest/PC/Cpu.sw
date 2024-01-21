@@ -3,7 +3,7 @@
 <SwConfiguration CpuAddress="SL1" xmlns="http://br-automation.co.at/AS/SwConfiguration">
   <TaskClass Name="Cyclic#1">
     <Task Name="TestSuite" Source="Source.UnitTest.TestSuite.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-    <Task Name="TestFloat" Source="Source.UnitTest.TestFloat.prg" Memory="UserROM" Language="ANSIC" Debugging="true" Disabled="true" />
+    <Task Name="TestFloat" Source="Source.UnitTest.TestFloat.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
     <Task Name="TestCopy" Source="Source.UnitTest.TestCopy.prg" Memory="UserROM" Language="ANSIC" Debugging="true" Disabled="true" />
     <Task Name="TestDT" Source="Source.UnitTest.TestDT.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="IECST" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
@@ -33,5 +33,6 @@
     <LibraryObject Name="sys_lib" Source="Libraries.sys_lib.lby" Memory="UserROM" Language="binary" Debugging="true" />
     <LibraryObject Name="UtWs" Source="Libraries.UtWs.lby" Memory="UserROM" Language="Binary" Debugging="true" />
     <LibraryObject Name="asieccon" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
+    <LibraryObject Name="asbrstr" Source="" Memory="UserROM" Language="Binary" Debugging="true" />
   </Libraries>
 </SwConfiguration>

@@ -28,5 +28,7 @@ int main (void) {
     printf("999999         : %14f\n", 999999.f);
     printf("999999.9       : %14f\n", 999999.9f);
 
+    printf("%e", 123.456);
+
     return 0;
 }
