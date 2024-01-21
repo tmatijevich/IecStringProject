@@ -3,6 +3,39 @@
 #include <string.h>
 #include <stdint.h>
 
+#define SAMPLE_SIZE 81
+#define FULL_PRECISION 6
+#define DEFAULT_WIDTH 0
+
+_TEST test_float_variable(void) {
+    char a[SAMPLE_SIZE];
+    float value;
+    int32_t status;
+
+    value = 12e34f;
+
+    status = IecStringFloat(a, sizeof(a), value, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("1.200000e+35", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_literal(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    status = IecStringFloat(a, sizeof(a), 12e34f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("1.200000e+35", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
 _TEST test_float_10_5(void) {
     char a[81];
     int32_t status;
@@ -233,6 +266,8 @@ _TEST test_float_10_n6_rollover(void) {
 }
 
 UNITTEST_FIXTURES(fixtures) {
+    new_TestFixture("IecStringFloat from variable", test_float_variable),
+    new_TestFixture("IecStringFloat from literal", test_float_literal),
     new_TestFixture("IecStringFloat 10^5", test_float_10_5),
     new_TestFixture("IecStringFloat 10^4", test_float_10_4),
     new_TestFixture("IecStringFloat 10^3", test_float_10_3),
