@@ -2,6 +2,7 @@
 #include <IecString.h>
 #include <string.h>
 #include <stdint.h>
+#include <float.h>
 
 #define SAMPLE_SIZE 81
 #define FULL_PRECISION 6
@@ -325,6 +326,32 @@ _TEST test_float_precision_0_notation(void) {
     TEST_DONE;
 }
 
+_TEST test_float_max(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    status = IecStringFloat(a, sizeof(a), FLT_MAX, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("3.402824e+38", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_min(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    status = IecStringFloat(a, sizeof(a), FLT_MIN, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("1.175494e-38", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
 UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat from variable", test_float_variable),
     new_TestFixture("IecStringFloat from literal", test_float_literal),
@@ -352,7 +379,9 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat precision 0 round", 
                     test_float_precision_0_round),
     new_TestFixture("IecStringFloat precision 0 scientific notation", 
-                    test_float_precision_0_notation)
+                    test_float_precision_0_notation),
+    new_TestFixture("IecStringFloat max", test_float_max),
+    new_TestFixture("IecStringFloat min", test_float_min)
 };
 
 UNITTEST_CALLER_TEST(float_set, "IecStringFloat test set", fixtures);
