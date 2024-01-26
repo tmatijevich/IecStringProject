@@ -4,5 +4,5 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	IecStringDateTime(String1, SIZEOF(String1), String2, DateAndTimeData);
+	IecStringDateTime(String1, SIZEOF(String1), DateAndTimeData, String2);
 END_PROGRAM
