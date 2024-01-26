@@ -6,5 +6,5 @@ int i;
 
 void _CYCLIC ProgramCyclic(void) {
     for (i = 0; i < 100; i++)
-        IecStringFloat(a, sizeof(a), 123.456e-23f);
+        IecStringFloat(a, sizeof(a), 123.456e-23f, 0, 6, IECSTRING_FLAG_NONE);
 }
