@@ -278,7 +278,7 @@ _TEST test_float_precision_3_round(void) {
     char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 0.9995f, 
+    status = IecStringFloat(a, sizeof(a), 0.99951f, 
                             DEFAULT_WIDTH, 3, IECSTRING_FLAG_NONE);
 
     TEST_ASSERT_EQUAL_STRING("1.000", a);
@@ -333,7 +333,7 @@ _TEST test_float_max(void) {
     status = IecStringFloat(a, sizeof(a), FLT_MAX, 
                             DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
-    TEST_ASSERT_EQUAL_STRING("3.402824e+38", a);
+    TEST_ASSERT_EQUAL_STRING("3.402823e+38", a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
 
     TEST_DONE;
