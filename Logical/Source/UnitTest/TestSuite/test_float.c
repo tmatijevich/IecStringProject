@@ -200,7 +200,8 @@ _TEST test_float_rollover_p5(void) {
     char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 999999.95f, 
+    /* Float stored as 999999.9375 or 1000000.0 */
+    status = IecStringFloat(a, sizeof(a), 999999.97f, 
                             DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
     TEST_ASSERT_EQUAL_STRING("1.000000e+06", a);
@@ -213,7 +214,8 @@ _TEST test_float_rollover_p2(void) {
     char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 999.99995f, 
+    /* Float stored as 999.99993896484375 or 1000.0 */
+    status = IecStringFloat(a, sizeof(a), 999.99997f, 
                             DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
     TEST_ASSERT_EQUAL_STRING("1000.000000", a);
@@ -226,7 +228,8 @@ _TEST test_float_rollover_0(void) {
     char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 0.99999995f, 
+
+    status = IecStringFloat(a, sizeof(a), 0.9999995f, 
                             DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
     TEST_ASSERT_EQUAL_STRING("1.000000", a);
@@ -239,7 +242,7 @@ _TEST test_float_rollover_n3(void) {
     char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 0.00099999995f, 
+    status = IecStringFloat(a, sizeof(a), 0.0009995f, 
                             DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
     TEST_ASSERT_EQUAL_STRING("0.001000", a);
@@ -252,10 +255,39 @@ _TEST test_float_rollover_n6(void) {
     char a[SAMPLE_SIZE];
     int32_t status;
 
-    status = IecStringFloat(a, sizeof(a), 0.00000099999995f, 
+    /* Float stored as 9.99999883788e-07 or 9.99999997475e-07 */
+    status = IecStringFloat(a, sizeof(a), 9.9999995e-7f, 
                             DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
 
-    TEST_ASSERT_EQUAL_STRING("0.000001", a);
+    TEST_ASSERT_EQUAL_STRING("1.000000e-06", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_p37_A(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    /* Float representation is 9.99999460968e+37 */
+    status = IecStringFloat(a, sizeof(a), 9.999995e37f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("9.999995e+37", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_p37_B(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    /* Float representation is 9.99999866617e+37 or 9.99999968029e+37 */
+    status = IecStringFloat(a, sizeof(a), 9.999999e37f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("9.999999e+37", a);
     TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
 
     TEST_DONE;
@@ -459,6 +491,8 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat precision 3", test_float_precision_3),
     new_TestFixture("IecStringFloat precision 3 round", 
                     test_float_precision_3_round),
+    new_TestFixture("IecStringFloat exponent +37 test A", test_float_p37_A),
+    new_TestFixture("IecStringFloat exponent +37 test B", test_float_p37_B),
     new_TestFixture("IecStringFloat precision 0", test_float_precision_0),
     new_TestFixture("IecStringFloat precision 0 round", 
                     test_float_precision_0_round),
