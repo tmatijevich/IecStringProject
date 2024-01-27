@@ -468,6 +468,60 @@ _TEST test_float_not_a_number(void) {
     TEST_DONE;
 }
 
+_TEST test_float_size_zero(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    strcpy(a, "abc");
+    status = IecStringFloat(a, 0, 123.0f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("abc", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_ZERO, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_size_one(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    strcpy(a, "abc");
+    status = IecStringFloat(a, 1, 123.0f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_INVALID, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_size_invalid(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status;
+
+    strcpy(a, "abc");
+    /* Requires size of 11 for full precision 123.000000 */
+    status = IecStringFloat(a, 6, 123.0f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_SIZE_INVALID, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_null(void) {
+    int32_t status;
+
+    status = IecStringFloat(NULL, SAMPLE_SIZE, 123.0f, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NULL, status);
+
+    TEST_DONE;
+}
+
 UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat from variable", test_float_variable),
     new_TestFixture("IecStringFloat from literal", test_float_literal),
@@ -505,7 +559,11 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat infinity", test_float_infinity),
     new_TestFixture("IecStringFloat negative infinity", 
                     test_float_negative_infinity),
-    new_TestFixture("IecStringFloat not a number", test_float_not_a_number)
+    new_TestFixture("IecStringFloat not a number", test_float_not_a_number),
+    new_TestFixture("IecStringFloat size zero", test_float_size_zero),
+    new_TestFixture("IecStringFloat size one", test_float_size_one),
+    new_TestFixture("IecStringFloat size invalid", test_float_size_invalid),
+    new_TestFixture("IecStringFloat null", test_float_null)
 };
 
 UNITTEST_CALLER_TEST(float_set, "IecStringFloat test set", fixtures);
