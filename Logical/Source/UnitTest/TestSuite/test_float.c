@@ -352,6 +352,90 @@ _TEST test_float_min(void) {
     TEST_DONE;
 }
 
+_TEST test_float_zero(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status, raw_value = 0;
+    float value;
+
+    memcpy(&value, &raw_value, 4);
+
+    status = IecStringFloat(a, sizeof(a), value, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("0", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_negative_zero(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status, raw_value = 0;
+    float value;
+
+    raw_value |= 1 << 31;
+    memcpy(&value, &raw_value, 4);
+
+    status = IecStringFloat(a, sizeof(a), value, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("-0", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_infinity(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status, raw_value = 0;
+    float value;
+
+    raw_value |= 0xff << 23;
+    memcpy(&value, &raw_value, 4);
+
+    status = IecStringFloat(a, sizeof(a), value, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("inf", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_negative_infinity(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status, raw_value = 0;
+    float value;
+
+    raw_value |= (1 << 31) + (0xff << 23);
+    memcpy(&value, &raw_value, 4);
+
+    status = IecStringFloat(a, sizeof(a), value, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("-inf", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
+_TEST test_float_not_a_number(void) {
+    char a[SAMPLE_SIZE];
+    int32_t status, raw_value = 0;
+    float value;
+
+    raw_value |= (0xff << 23) + 1;
+    memcpy(&value, &raw_value, 4);
+
+    status = IecStringFloat(a, sizeof(a), value, 
+                            DEFAULT_WIDTH, FULL_PRECISION, IECSTRING_FLAG_NONE);
+
+    TEST_ASSERT_EQUAL_STRING("NaN", a);
+    TEST_ASSERT_EQUAL_INT(IECSTRING_ERROR_NONE, status);
+
+    TEST_DONE;
+}
+
 UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat from variable", test_float_variable),
     new_TestFixture("IecStringFloat from literal", test_float_literal),
@@ -381,7 +465,13 @@ UNITTEST_FIXTURES(fixtures) {
     new_TestFixture("IecStringFloat precision 0 scientific notation", 
                     test_float_precision_0_notation),
     new_TestFixture("IecStringFloat max", test_float_max),
-    new_TestFixture("IecStringFloat min", test_float_min)
+    new_TestFixture("IecStringFloat min", test_float_min),
+    new_TestFixture("IecStringFloat zero", test_float_zero),
+    new_TestFixture("IecStringFloat negative zero", test_float_negative_zero),
+    new_TestFixture("IecStringFloat infinity", test_float_infinity),
+    new_TestFixture("IecStringFloat negative infinity", 
+                    test_float_negative_infinity),
+    new_TestFixture("IecStringFloat not a number", test_float_not_a_number)
 };
 
 UNITTEST_CALLER_TEST(float_set, "IecStringFloat test set", fixtures);
