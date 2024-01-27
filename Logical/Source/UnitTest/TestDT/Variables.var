@@ -1,6 +1,0 @@
-VAR
-	DateAndTimeData : DTStructure;
-	String1 : STRING[80];
-	String2 : STRING[80];
-	GetDateAndTime : DTStructureGetTime;
-END_VAR
