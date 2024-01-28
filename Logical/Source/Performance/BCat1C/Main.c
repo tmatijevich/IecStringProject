@@ -1,12 +1,17 @@
 #include <bur/plc.h>
 #include <string.h>
 
-char a[255] = "Hello World! 1234567890.";
+char a[255] = "0123456789abcdefghij0123456789abcdefghij"
+              "0123456789abcdefghij0123456789abcdefghij";
 int i;
 
-void _CYCLIC ProgramCyclic(void) {
-    for (i = 0; i < 100; i++) {
-        a[24] = '\0';
-        strcat(a, " The quick brown fox jumps over the lazy dog.");
+/* 100 calls to concatenate 80 characters to length of 80 */
+void _CYCLIC ProgramCyclic(void)
+{
+    for (i = 0; i < 100; i++)
+    {
+        a[80] = '\0';
+        strcat(a, "0123456789abcdefghij0123456789abcdefghij"
+                  "0123456789abcdefghij0123456789abcdefghij");
     }
 }

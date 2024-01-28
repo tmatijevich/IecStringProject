@@ -19,5 +19,20 @@ gantt
     64 : 0, 64
 ```
 
+```mermaid
+gantt
+    title [us] 100 Calls to Concatenate 80 Characters to Length of 80 - AR E4.92 - Intel ATOM E640T 1 GHz
+    dateFormat X
+    axisFormat %s
+    section strcat
+    57 : 0, 57
+    section CONCAT
+    240 : 0, 240
+    section brsstrcat
+    116 : 0, 116
+    section IecStringConcat
+    92 : 0, 92
+```
+
 # Unit Tests
 

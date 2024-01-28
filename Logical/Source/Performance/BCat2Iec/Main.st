@@ -1,6 +1,6 @@
 
 PROGRAM _CYCLIC
 	FOR i := 0 TO 99 DO
-		a := CONCAT('Hello World! 1234567890.', ' The quick brown fox jumps over the lazy dog.');
+		a := CONCAT('0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij', '0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij0123456789abcdefghij');
 	END_FOR
 END_PROGRAM
