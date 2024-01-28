@@ -10,5 +10,6 @@
     <File Description="Test IecStringFormat">test_format.c</File>
     <File Description="Test IecStringDecimal">test_decimal.c</File>
     <File Description="Test IecStringFloat">test_float.c</File>
+    <File Description="Test IecStringDateTime">test_date_time.c</File>
   </Files>
 </Program>
