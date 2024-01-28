@@ -4,7 +4,12 @@
 char a[255];
 int i;
 
-void _CYCLIC ProgramCyclic(void) {
+/* 100 calls to copy 80 characters */
+void _CYCLIC ProgramCyclic(void)
+{
     for (i = 0; i < 100; i++)
-        strcpy(a, "This is a test of string copy performance across multiple libraries.");
+    {
+        strcpy(a, "0123456789abcdefghij0123456789abcdefghij"
+                  "0123456789abcdefghij0123456789abcdefghij");
+    }
 }
