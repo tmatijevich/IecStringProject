@@ -5,7 +5,7 @@
     <Object Type="File" Description="Software configuration">Cpu.sw</Object>
   </Objects>
   <Configuration ModuleId="X20CP0484">
-    <AutomationRuntime Version="C4.90" />
+    <AutomationRuntime Version="E4.92" />
     <Build GccVersion="4.1.2" IgnoredObjectNamesForBuildWarnings=".git" />
     <DefaultTargetMemory Tasks="UserROM" />
   </Configuration>

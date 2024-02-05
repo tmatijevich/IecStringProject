@@ -4,6 +4,7 @@
   <Objects>
     <Object Type="Configuration">UnitTest</Object>
     <Object Type="Configuration">Hardware</Object>
+    <Object Type="Configuration">Intel</Object>
     <Object Type="Configuration">ARM</Object>
   </Objects>
 </Physical>
