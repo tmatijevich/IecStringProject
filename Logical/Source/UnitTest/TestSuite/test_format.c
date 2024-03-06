@@ -160,7 +160,8 @@ _TEST format_null_values(void) {
     char a[SAMPLE_SIZE], b[SAMPLE_SIZE];
     int32_t status;
 
-    strcpy(a, SAMPLE_STRING);
+    strcpy(a, "abc123");
+    strcpy(b, SAMPLE_STRING);
 
     status = IecStringFormat(a, sizeof(a), b, NULL);
 
