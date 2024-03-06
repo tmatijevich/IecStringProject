@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Package">Source</Object>
+    <Object Type="Package">Text</Object>
   </Objects>
 </Package>
