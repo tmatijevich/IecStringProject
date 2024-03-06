@@ -34,3 +34,4 @@
 #!/Diagnosis/**/*.tc
 
 /Release
+/.vscode/settings.json
