@@ -6,6 +6,7 @@
     <File Description="Set loader and handler">load.c</File>
     <File Description="Test IecStringCopy">test_copy.c</File>
     <File Description="Test IecStringConcat">test_concat.c</File>
+    <File Description="Test IecStringCompare">test_compare.c</File>
     <File Description="Test IecStringStartsWith">test_start.c</File>
     <File Description="Test IecStringEndsWith">test_end.c</File>
     <File Description="Test IecStringReplace">test_replace.c</File>
