@@ -5,6 +5,7 @@ UNITTEST_TESTSET_DECLARATION copy_set;
 UNITTEST_TESTSET_DECLARATION concat_set;
 UNITTEST_TESTSET_DECLARATION compare_set;
 UNITTEST_TESTSET_DECLARATION length_set;
+UNITTEST_TESTSET_DECLARATION first_set;
 UNITTEST_TESTSET_DECLARATION start_set;
 UNITTEST_TESTSET_DECLARATION end_set;
 UNITTEST_TESTSET_DECLARATION replace_set;
@@ -19,6 +20,7 @@ UNITTEST_TESTSET_FIXTURES (utTestSets)
     new_TestSet(concat_set),
     new_TestSet(compare_set),
     new_TestSet(length_set),
+    new_TestSet(first_set),
     new_TestSet(start_set),
     new_TestSet(end_set),
     new_TestSet(replace_set),

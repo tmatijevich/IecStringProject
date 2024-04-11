@@ -8,6 +8,7 @@
     <File Description="Test IecStringConcat">test_concat.c</File>
     <File Description="Test IecStringCompare">test_compare.c</File>
     <File Description="Test IecStringLength">test_length.c</File>
+    <File Description="Test IecStringFirst">test_first.c</File>
     <File Description="Test IecStringStartsWith">test_start.c</File>
     <File Description="Test IecStringEndsWith">test_end.c</File>
     <File Description="Test IecStringReplace">test_replace.c</File>
