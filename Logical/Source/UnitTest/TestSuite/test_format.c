@@ -191,7 +191,7 @@ _TEST format_size_1(void) {
     IecStringFormatType args;
     int32_t status;
 
-    strcpy(a, SAMPLE_STRING);
+    strcpy(b, SAMPLE_STRING);
 
     status = IecStringFormat(a, 1, b, &args);
 
