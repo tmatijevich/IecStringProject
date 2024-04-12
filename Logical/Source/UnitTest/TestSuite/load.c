@@ -11,6 +11,7 @@ UNITTEST_TESTSET_DECLARATION find_set;
 UNITTEST_TESTSET_DECLARATION start_set;
 UNITTEST_TESTSET_DECLARATION end_set;
 UNITTEST_TESTSET_DECLARATION replace_set;
+UNITTEST_TESTSET_DECLARATION split_set;
 UNITTEST_TESTSET_DECLARATION format_set;
 UNITTEST_TESTSET_DECLARATION decimal_set;
 UNITTEST_TESTSET_DECLARATION float_set;
@@ -28,6 +29,7 @@ UNITTEST_TESTSET_FIXTURES (utTestSets)
     new_TestSet(start_set),
     new_TestSet(end_set),
     new_TestSet(replace_set),
+    new_TestSet(split_set),
     new_TestSet(format_set),
     new_TestSet(decimal_set),
     new_TestSet(float_set),
