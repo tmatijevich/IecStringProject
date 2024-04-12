@@ -7,6 +7,7 @@ UNITTEST_TESTSET_DECLARATION compare_set;
 UNITTEST_TESTSET_DECLARATION length_set;
 UNITTEST_TESTSET_DECLARATION first_set;
 UNITTEST_TESTSET_DECLARATION last_set;
+UNITTEST_TESTSET_DECLARATION find_set;
 UNITTEST_TESTSET_DECLARATION start_set;
 UNITTEST_TESTSET_DECLARATION end_set;
 UNITTEST_TESTSET_DECLARATION replace_set;
@@ -23,6 +24,7 @@ UNITTEST_TESTSET_FIXTURES (utTestSets)
     new_TestSet(length_set),
     new_TestSet(first_set),
     new_TestSet(last_set),
+    new_TestSet(find_set),
     new_TestSet(start_set),
     new_TestSet(end_set),
     new_TestSet(replace_set),
