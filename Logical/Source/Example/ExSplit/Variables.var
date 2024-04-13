@@ -1,0 +1,13 @@
+(*Command*)
+VAR
+	Run : BOOL;
+END_VAR
+(*Data*)
+VAR
+	Source : STRING[80];
+	SourceReference : REFERENCE TO STRING[80];
+	NextAddress : UDINT;
+	Delimeters : STRING[80];
+	Words : ARRAY[0..9] OF STRING[80];
+	Index : USINT;
+END_VAR
