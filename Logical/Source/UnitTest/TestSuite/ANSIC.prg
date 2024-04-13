@@ -11,6 +11,8 @@
     <File Description="Test IecStringFirst">test_first.c</File>
     <File Description="Test IecStringLast">test_last.c</File>
     <File Description="Test IecStringFind">test_find.c</File>
+    <File Description="Test IecStringFirstIn">test_first_in.c</File>
+    <File Description="Test IecStringLengthIn">test_length_in.c</File>
     <File Description="Test IecStringStartsWith">test_start.c</File>
     <File Description="Test IecStringEndsWith">test_end.c</File>
     <File Description="Test IecStringReplace">test_replace.c</File>
