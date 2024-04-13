@@ -17,13 +17,12 @@ PROGRAM _CYCLIC
 		SourceReference ACCESS ADR(Source);
 		REPEAT
 			IecStringSplit(Words[Index], SIZEOF(Words[Index]), SourceReference, Delimeters, NextAddress);
-			IF NextAddress <> 0 THEN
-				SourceReference ACCESS NextAddress;
-			END_IF
+			SourceReference ACCESS NextAddress;
 			Index := Index + 1;
 		UNTIL
 			Index >= SIZEOF(Words) / SIZEOF(Words[0]) OR NextAddress = 0
 		END_REPEAT
+		SourceReference ACCESS ADR(Source);
 	END_IF
 	
 END_PROGRAM
