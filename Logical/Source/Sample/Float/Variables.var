@@ -1,6 +1,0 @@
-VAR
-	String1 : STRING[80];
-	Value : REAL;
-	Width : USINT;
-	Precision : USINT;
-END_VAR
