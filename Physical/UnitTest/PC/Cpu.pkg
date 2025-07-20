@@ -6,7 +6,7 @@
     <Object Type="Package">Connectivity</Object>
   </Objects>
   <Configuration ModuleId="PC_any">
-    <AutomationRuntime Version="E4.92" />
+    <AutomationRuntime Version="6.3.0" />
     <Build AnsicIncludeDirectories="\Logical\Libraries\UnitTest\,\Logical\Libraries\UnitTest\include\" GccVersion="11.3.0" IgnoredObjectNamesForBuildWarnings=".git;c_standard" />
     <DefaultTargetMemory Tasks="UserROM" />
     <Transfer SavedOfflineInstallationFolder="" SavedPipDestinationFolder="" SavedRuntimeUtilityCenterPackagePath="" />
